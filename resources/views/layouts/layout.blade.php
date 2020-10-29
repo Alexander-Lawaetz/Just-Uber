@@ -24,10 +24,10 @@
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <div class="flex flex-row">
-                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline px-2 py-1 button">Home</a>
+                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <input type="submit" class="text-sm ml-2 px-2 py-1 text-gray-700 underline" value="logout">
+                                <button type="submit"  class="ml-4 pb-6 align-middle my-auto text-sm text-gray-700 underline cursor-pointer bg-transparent">Logout</button>
                             </form>
                         </div>
                     @else
