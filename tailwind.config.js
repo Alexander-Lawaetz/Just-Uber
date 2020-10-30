@@ -22,6 +22,7 @@ module.exports = {
             textColor: {
                 dark: {
                     primary: 'var(--dark-text-color-primary)',
+                    important: 'var(--dark-text-color-important)',
                 },
             },
         },

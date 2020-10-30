@@ -4,6 +4,7 @@
   --dark-bg-color-important: #fe365f;
   --dark-bg-color-hover: #17171f;
   --dark-text-color-primary: #eeeeee;
+  --dark-text-color-important: #fe365f;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -17057,6 +17058,10 @@ video {
   color: var(--dark-text-color-primary) !important;
 }
 
+.text-dark-important {
+  color: var(--dark-text-color-important) !important;
+}
+
 .hover\:text-transparent:hover {
   color: transparent !important;
 }
@@ -17621,6 +17626,10 @@ video {
   color: var(--dark-text-color-primary) !important;
 }
 
+.hover\:text-dark-important:hover {
+  color: var(--dark-text-color-important) !important;
+}
+
 .focus\:text-transparent:focus {
   color: transparent !important;
 }
@@ -18183,6 +18192,10 @@ video {
 
 .focus\:text-dark-primary:focus {
   color: var(--dark-text-color-primary) !important;
+}
+
+.focus\:text-dark-important:focus {
+  color: var(--dark-text-color-important) !important;
 }
 
 .text-opacity-0 {
@@ -38170,6 +38183,10 @@ video {
     color: var(--dark-text-color-primary) !important;
   }
 
+  .sm\:text-dark-important {
+    color: var(--dark-text-color-important) !important;
+  }
+
   .sm\:hover\:text-transparent:hover {
     color: transparent !important;
   }
@@ -38734,6 +38751,10 @@ video {
     color: var(--dark-text-color-primary) !important;
   }
 
+  .sm\:hover\:text-dark-important:hover {
+    color: var(--dark-text-color-important) !important;
+  }
+
   .sm\:focus\:text-transparent:focus {
     color: transparent !important;
   }
@@ -39296,6 +39317,10 @@ video {
 
   .sm\:focus\:text-dark-primary:focus {
     color: var(--dark-text-color-primary) !important;
+  }
+
+  .sm\:focus\:text-dark-important:focus {
+    color: var(--dark-text-color-important) !important;
   }
 
   .sm\:text-opacity-0 {
@@ -59218,6 +59243,10 @@ video {
     color: var(--dark-text-color-primary) !important;
   }
 
+  .md\:text-dark-important {
+    color: var(--dark-text-color-important) !important;
+  }
+
   .md\:hover\:text-transparent:hover {
     color: transparent !important;
   }
@@ -59782,6 +59811,10 @@ video {
     color: var(--dark-text-color-primary) !important;
   }
 
+  .md\:hover\:text-dark-important:hover {
+    color: var(--dark-text-color-important) !important;
+  }
+
   .md\:focus\:text-transparent:focus {
     color: transparent !important;
   }
@@ -60344,6 +60377,10 @@ video {
 
   .md\:focus\:text-dark-primary:focus {
     color: var(--dark-text-color-primary) !important;
+  }
+
+  .md\:focus\:text-dark-important:focus {
+    color: var(--dark-text-color-important) !important;
   }
 
   .md\:text-opacity-0 {
@@ -80266,6 +80303,10 @@ video {
     color: var(--dark-text-color-primary) !important;
   }
 
+  .lg\:text-dark-important {
+    color: var(--dark-text-color-important) !important;
+  }
+
   .lg\:hover\:text-transparent:hover {
     color: transparent !important;
   }
@@ -80830,6 +80871,10 @@ video {
     color: var(--dark-text-color-primary) !important;
   }
 
+  .lg\:hover\:text-dark-important:hover {
+    color: var(--dark-text-color-important) !important;
+  }
+
   .lg\:focus\:text-transparent:focus {
     color: transparent !important;
   }
@@ -81392,6 +81437,10 @@ video {
 
   .lg\:focus\:text-dark-primary:focus {
     color: var(--dark-text-color-primary) !important;
+  }
+
+  .lg\:focus\:text-dark-important:focus {
+    color: var(--dark-text-color-important) !important;
   }
 
   .lg\:text-opacity-0 {
@@ -101314,6 +101363,10 @@ video {
     color: var(--dark-text-color-primary) !important;
   }
 
+  .xl\:text-dark-important {
+    color: var(--dark-text-color-important) !important;
+  }
+
   .xl\:hover\:text-transparent:hover {
     color: transparent !important;
   }
@@ -101878,6 +101931,10 @@ video {
     color: var(--dark-text-color-primary) !important;
   }
 
+  .xl\:hover\:text-dark-important:hover {
+    color: var(--dark-text-color-important) !important;
+  }
+
   .xl\:focus\:text-transparent:focus {
     color: transparent !important;
   }
@@ -102440,6 +102497,10 @@ video {
 
   .xl\:focus\:text-dark-primary:focus {
     color: var(--dark-text-color-primary) !important;
+  }
+
+  .xl\:focus\:text-dark-important:focus {
+    color: var(--dark-text-color-important) !important;
   }
 
   .xl\:text-opacity-0 {
@@ -122362,6 +122423,10 @@ video {
     color: var(--dark-text-color-primary) !important;
   }
 
+  .dark\:text-dark-important {
+    color: var(--dark-text-color-important) !important;
+  }
+
   .dark\:hover\:text-transparent:hover {
     color: transparent !important;
   }
@@ -122926,6 +122991,10 @@ video {
     color: var(--dark-text-color-primary) !important;
   }
 
+  .dark\:hover\:text-dark-important:hover {
+    color: var(--dark-text-color-important) !important;
+  }
+
   .dark\:focus\:text-transparent:focus {
     color: transparent !important;
   }
@@ -123488,6 +123557,10 @@ video {
 
   .dark\:focus\:text-dark-primary:focus {
     color: var(--dark-text-color-primary) !important;
+  }
+
+  .dark\:focus\:text-dark-important:focus {
+    color: var(--dark-text-color-important) !important;
   }
 
   .dark\:text-opacity-0 {

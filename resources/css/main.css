@@ -6,6 +6,7 @@
     --dark-bg-color-hover: #17171f;
 
     --dark-text-color-primary: #eeeeee;
+    --dark-text-color-important: #fe365f;
 }
 
 @import "tailwindcss/base";
