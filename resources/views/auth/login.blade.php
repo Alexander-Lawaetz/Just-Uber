@@ -10,20 +10,20 @@
                 @csrf
                 <div class="w-auto">
                     <label for="email">Email:</label><br>
-                    <input class="w-full p-3 my-3 dark:bg-dark-secondary bg-gray-900 border-2 border-gray-900 @error('email') is-invalid @enderror" id="email" type="email" name="email" placeholder="Type your email" required>
+                    <input class="w-full p-3 my-3 dark:bg-dark-primary border-2 border-gray-900 @error('email') is-invalid @enderror" id="email" type="email" name="email" placeholder="Type your email" required>
                 </div>
                 @error('email')
                 <span class="text-red-600 text-sm">{{ $message }}</span>
                 @enderror
                 <div class="w-auto">
                     <label for="password">Password:</label><br>
-                    <input class="w-full p-3 my-3 dark:bg-dark-secondary bg-gray-900 border-2 border-gray-900 @error('password') is-invalid @enderror" id="password" type="password" name="password" placeholder="New Password" required>
+                    <input class="w-full p-3 my-3 dark:bg-dark-primary border-2 border-gray-900 @error('password') is-invalid @enderror" id="password" type="password" name="password" placeholder="New Password" required>
                 </div>
                 @error('password')
                 <span class="text-red-600 text-sm">{{ $message }}</span>
                 @enderror
                 <div class="w-auto">
-                    <input class="dark:bg-gray-100 bg-gray-900 border-2 border-gray-900" id="remember" type="checkbox" name="remember">
+                    <input class="border-2 border-gray-900" id="remember" type="checkbox" name="remember">
                     <label for="remember">Remember me</label><br>
                 </div>
                 <div clas="w-auto">
