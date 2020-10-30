@@ -1,4 +1,5 @@
 module.exports = {
+    important: true,
     future: {
         // removeDeprecatedGapUtilities: true,
         // purgeLayersByDefault: true,
@@ -11,14 +12,18 @@ module.exports = {
                 // => @media (prefers-color-scheme: dark) { ... }
             },
             backgroundColor: {
-                primary: 'var(--bg-color-primary)',
-                secondary: 'var(--bg-color-secondary)',
-                important: 'var(--bg-color-important)',
-                hover: 'var(--bg-color-hover)',
+                dark: {
+                    primary: 'var(--dark-bg-color-primary)',
+                    secondary: 'var(--dark-bg-color-secondary)',
+                    important: 'var(--dark-bg-color-important)',
+                    hover: 'var(--dark-bg-color-hover)',
+                },
             },
-            color: {
-                primary: 'var(--text-color-primary)',
-            }
+            textColor: {
+                dark: {
+                    primary: 'var(--dark-text-color-primary)',
+                },
+            },
         },
     },
     variants: {},
