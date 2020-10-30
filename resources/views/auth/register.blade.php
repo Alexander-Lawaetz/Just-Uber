@@ -34,10 +34,6 @@
                     <label for="password_confirmation">Confirm password:</label><br>
                     <input class="w-full p-3 my-3 dark:bg-dark-primary border-2 border-gray-900" id="password_confirmation" type="password" name="password_confirmation" placeholder="Confirm password" required>
                 </div>
-                <div class="w-auto">
-                    <input class="dark:bg-dark-primary border-2 border-gray-900"  id="remember" type="checkbox" name="remember">
-                    <label for="remember">Remember me</label><br>
-                </div>
                 <div clas="w-auto">
                     <input class="w-full p-3 my-3 dark:bg-dark-important border-2 border-gray-900" type="submit" value="Register account">
                 </div>
