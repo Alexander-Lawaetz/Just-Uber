@@ -42,6 +42,11 @@
                     <input class="w-full p-3 my-3 dark:bg-dark-important border-2 border-gray-900" type="submit" value="Register account">
                 </div>
             </form>
+            <p class="text-sm">Alredy have an account? <a href="{{ route('login') }}" class="dark:text-dark-important">Login here</a></p>
+            <nav class="text-sm">
+                <a href="#!">Terms of use.</a>
+                <a href="#!">Privacy policy</a>
+            </nav>
             <!-- Social media -->
         </div>
     </div>
