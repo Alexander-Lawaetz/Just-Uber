@@ -36,23 +36,23 @@
         <div class="sm:flex sm:flex-row sm:justify-between w-full m-auto">
             <div class="sm:w-1/3 text-center h-40 relative">
                 <a href="#">
-                    <img class="object-cover h-full w-full" src="https://via.placeholder.com/387x150.png/2b2b35/eeeeee?text=https://placeholder.com/">
+                    <img class="object-cover h-full w-full" loading="lazy" src="https://via.placeholder.com/387x150.png/2b2b35/eeeeee?text=https://placeholder.com/">
                     <span class="lg:text-2xl absolute bottom-0 inset-x-0 mb-3">Italian</span></a>
             </div>
             <div class="sm:w-1/3 my-4 sm:my-0 sm:ml-6 text-center h-40 relative">
                 <a href="#">
-                    <img class="object-cover h-full w-full" src="https://via.placeholder.com/387x150.png/2b2b35/eeeeee?text=https://placeholder.com/">
+                    <img class="object-cover h-full w-full" loading="lazy" src="https://via.placeholder.com/387x150.png/2b2b35/eeeeee?text=https://placeholder.com/">
                     <span class="lg:text-2xl absolute bottom-0 inset-x-0 mb-3">American</span></a>
             </div>
             <div class=" sm:w-1/3 sm:ml-6 text-center h-40 relative">
                 <a href="#">
-                    <img class="object-cover h-full w-full" src="https://via.placeholder.com/387x150.png/2b2b35/eeeeee?text=https://placeholder.com/">
+                    <img class="object-cover h-full w-full" loading="lazy" src="https://via.placeholder.com/387x150.png/2b2b35/eeeeee?text=https://placeholder.com/">
                     <span class="lg:text-2xl absolute bottom-0 inset-x-0 mb-3">Japanese</span>
                 </a>
             </div>
         </div>
     </div>
-    <div class="container px-4 sm:px-8 pb-4 mx-auto">
+    <div class="container px-4 sm:px-8 mb-8 mx-auto">
         <div class="dark:bg-dark-secondary p-6 sm:p-10">
             <div class="flex flex-col lg:flex-row lg:justify-around">
                 <div class="lg:w-1/2 h-full">
@@ -62,13 +62,17 @@
                     <h2 class="text-2xl md:text-3xl my-4 font-semibold">Find your flavor even faster</h2>
                     <p class="my-4">Download the Just Uber app for faster ordering and more personalised recommendations</p>
                     <div class="flex flex-row justify-between sm:justify-center p-2">
-                        <img src="{{ asset('storage/DK-app-store-icon.svg') }}">
-                        <img class="sm:ml-4" src="{{ asset('storage/DK-app-store-icon.svg') }}">
+                        <a href="#"><img class="" src="{{ asset('storage/DK-app-store-icon.svg') }}"></a>
+                        <a href="#" class="sm:ml-4"><img src="{{ asset('storage/DK-google-play-icon.svg') }}"></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    <x-footer />
 @endsection
 
 @push('styles')

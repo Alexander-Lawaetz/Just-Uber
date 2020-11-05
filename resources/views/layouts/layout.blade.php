@@ -22,9 +22,11 @@
     <body class="antialiased">
         @yield('navbar')
 
-        <main class="relative min-h-screen bg-gray-100 dark:bg-dark-primary text-gray-600 dark:text-dark-primary">
+        <div class="relative min-h-screen bg-gray-100 dark:bg-dark-primary text-gray-600 dark:text-dark-primary">
             @yield('content')
-        </main>
+
+            @yield('footer')
+        </div>
 
         @stack('scrips')
     </body>
