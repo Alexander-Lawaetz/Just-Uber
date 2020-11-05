@@ -1,3 +1,24 @@
+## Setup
+```
+git clone https://github.com/alexander-lawaetz/just-uber
+cd just-uber
+composer install
+npm install && npm run dev
+```
+
+copy-paste .env.example to .env
+setup mailtrap.io account -> update .env file for database and mailtrap
+
+
+php artisan serve
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
