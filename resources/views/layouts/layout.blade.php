@@ -17,30 +17,15 @@
                 font-family: 'Nunito';
             }
         </style>
+        @stack('styles')
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-dark-primary sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <div class="flex flex-row">
-                            <a href="{{ url('/home') }}" class="text-sm text-dark-primary underline">Home</a>
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button type="submit"  class="ml-4 pb-6 align-middle my-auto text-sm text-dark-primary cursor-pointer bg-transparent">Logout</button>
-                            </form>
-                        </div>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-dark-primary underline">Login</a>
+        @yield('navbar')
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-dark-primary underline">Register</a>
-                        @endif
-                    @endif
-                </div>
-            @endif
-
+        <main class="relative min-h-screen bg-gray-100 dark:bg-dark-primary text-gray-600 dark:text-dark-primary">
             @yield('content')
-        </div>
+        </main>
+
+        @stack('scrips')
     </body>
 </html>
