@@ -16,7 +16,7 @@ php artisan serve
 
 ## Code
 
-All scripts and scene files are distributed under the [MIT license](LICENSE.md).  
+All is distributed under the [MIT license](LICENSE.md).  
 Copyright held by Alexander Lawaetz.
 
 ## Assets
