@@ -17,11 +17,23 @@ module.exports = {
                     important: 'var(--dark-bg-color-important)',
                     hover: 'var(--dark-bg-color-hover)',
                 },
+                light: {
+                    primary: 'var(--light-bg-color-primary)',
+                    secondary: 'var(--light-bg-color-secondary)',
+                    third: 'var(--light-bg-color-third)',
+                    important: 'var(--light-bg-color-important)',
+                    hover: 'var(--light-bg-color-hover)',
+                },
             },
             textColor: {
                 dark: {
                     primary: 'var(--dark-text-color-primary)',
                     important: 'var(--dark-text-color-important)',
+                },
+                light: {
+                    primary: 'var(--light-text-color-primary)',
+                    secondary: 'var(--light-text-color-secondary)',
+                    important: 'var(--light-text-color-important)',
                 },
             },
             borderColor: {
@@ -30,6 +42,13 @@ module.exports = {
                     secondary: 'var(--dark-bg-color-secondary)',
                     important: 'var(--dark-bg-color-important)',
                     hover: 'var(--dark-bg-color-hover)',
+                },
+                light: {
+                    primary: 'var(--light-bg-color-primary)',
+                    secondary: 'var(--light-bg-color-secondary)',
+                    third: 'var(--light-bg-color-third)',
+                    important: 'var(--light-bg-color-important)',
+                    hover: 'var(--light-bg-color-hover)',
                 },
             },
             inset: {

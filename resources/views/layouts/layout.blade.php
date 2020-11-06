@@ -22,7 +22,7 @@
     <body class="antialiased">
         @yield('navbar')
 
-        <div class="relative min-h-screen bg-gray-100 dark:bg-dark-primary text-gray-600 dark:text-dark-primary">
+        <div class="relative min-h-screen bg-light-primary dark:bg-dark-primary text-light-primary dark:text-dark-primary">
             @yield('content')
 
             @yield('footer')

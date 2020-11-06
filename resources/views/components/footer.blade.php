@@ -1,5 +1,5 @@
 <div class="w-full">
-    <div class="py-4 sm:py-8 dark:bg-dark-secondary">
+    <div class="py-4 sm:py-8 bg-light-third dark:bg-dark-secondary">
         <div class="container px-4 sm:px-8 mx-auto">
             <div class="flex flex-col sm:flex-row">
                 <div class="flex-grow mb-4">
@@ -61,18 +61,18 @@
                 <div>
                     <h2 class="text-xl font-semibold mb-4 leading-loose">Follow Us</h2>
                     <div class="flex flex-row sm:justify-between justify-items-start">
-                        <a href="#"><x-blogsvg class="dark:text-dark-important"/></a>
-                        <a href="#" class="ml-4"><x-facebooksvg class="dark:text-dark-important"/></a>
-                        <a href="#" class="ml-4"><x-twittersvg class="dark:text-dark-important"/></a>
+                        <a href="#"><x-blogsvg class="text-light-important dark:text-dark-important"/></a>
+                        <a href="#" class="ml-4"><x-facebooksvg class="text-light-important dark:text-dark-important"/></a>
+                        <a href="#" class="ml-4"><x-twittersvg class="text-light-important dark:text-dark-important"/></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="sm:py-4 sm:py-8 dark:bg-dark-secondary">
+    <div class="sm:py-4 sm:py-8 bg-light-third dark:bg-dark-secondary">
         <div class="sm:container sm:px-4 sm:px-8 sm:mx-auto">
             <div class="flex flex-col sm:flex-row sm:justify-between">
-                <div class="sm:p-0 order-last sm:order-first">
+                <div class="py-4 pl-6 sm:p-0 order-last sm:order-first">
                     <button class="hover:underline h-full">
                         <div class="flex">
                             <span><img class="h-4" src="{{ asset('storage/flag-icons/denmark.svg') }}" /></span>

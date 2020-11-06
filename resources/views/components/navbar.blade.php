@@ -1,7 +1,7 @@
 <div {{ $attributes->merge(['class' => 'flex justify-between w-full p-2']) }}>
     <div>
         <a href="/home">
-            <x-justeatsvg class="text-dark-important" />
+            <x-justeatsvg class="text-light-important dark:text-dark-important" />
         </a>
     </div>
 
