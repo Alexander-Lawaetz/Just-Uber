@@ -26,4 +26,4 @@ Copyright held by Just Eat
 
 ## Disclaimer
 
-The code is not verified by any card providers, and all payment verified icons are stored in ``storage/`` and belong too just-eat.dk aswell
+The code is not verified by any card providers, and all payment verified icons are stored in ``storage/`` and belongs too Just Eat aswell
