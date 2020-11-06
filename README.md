@@ -21,9 +21,9 @@ Copyright held by Alexander Lawaetz.
 
 ## Assets
 
-All art assets (files in ``storage/``) belongs to [https://www.just-eat.co.uk](https://www.just-eat.co.uk/info/terms-and-conditions) license under their terms and conditions.  
+All art assets (files in ``public/storage/``) belongs to [https://www.just-eat.co.uk](https://www.just-eat.co.uk/info/terms-and-conditions) license under their terms and conditions.  
 Copyright held by Just Eat 
 
 ## Disclaimer
 
-The code is not verified by any card providers, and all payment verified icons are stored in ``storage/`` and belongs too Just Eat aswell
+The code is not verified by any card providers, and all payment verified icons are stored in ``public/storage/`` and belongs too Just Eat aswell
