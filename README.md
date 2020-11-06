@@ -11,3 +11,18 @@ setup mailtrap.io account -> update .env file for database and mailtrap
 
 
 php artisan serve
+
+# Licensing
+
+## Code
+
+All scripts and scene files are distributed under the [MIT license](LICENSE.md).  
+Copyright held by Alexander Lawaetz.
+
+## Assets
+
+All art assets (files in ``storage/``) belongs to [https://www.just-eat.co.uk](https://www.just-eat.co.uk/info/terms-and-conditions) license.
+
+## Disclaimer
+
+The code is not verified by any card providers, and all payment verified icons are stored in ``storage/`` and belong too just-eat.dk aswell
