@@ -1,10 +1,11 @@
 <div class="w-full">
-    <div class="py-4 sm:py-8 bg-light-third dark:bg-dark-secondary">
-        <div class="container px-4 sm:px-8 mx-auto">
+    <div class="bg-light-third dark:bg-dark-secondary">
+        <div class="container mx-auto">
             <div class="flex flex-col sm:flex-row">
-                <div class="flex-grow mb-4">
-                    <h2 class="text-xl font-semibold mb-4 leading-loose">Explore cuisines</h2>
-                    <div>
+                <div class="relative flex-grow pt-4 sm:py-8  px-4 sm:px-8 border-b sm:border-none">
+                    <h2 id="footer-0" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleVisibility(event)">Explore cuisines</h2>
+                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    <div class="list-dropdown hidden sm:block transition-all duration-500 ease-in-out pb-4">
                         <ul>
                             <x-list-anchor-item><a href="#">Premium & Gourment</a></x-list-anchor-item>
                             <x-list-anchor-item><a href="#">Pizza</a></x-list-anchor-item>
@@ -16,9 +17,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex-grow mb-4">
-                    <h2 class="text-xl font-semibold mb-4 leading-loose">Find your city</h2>
-                    <div>
+                <div class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 border-b sm:border-none">
+                    <h2  id="footer-1" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleVisibility(event)">Find your city</h2>
+                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    <div class="list-dropdown hidden sm:block transition-all duration-500 ease-in-out pb-4">
                         <ul>
                             <x-list-anchor-item><a href="#">Copenhagen</a></x-list-anchor-item>
                             <x-list-anchor-item><a href="#">Roskilde</a></x-list-anchor-item>
@@ -29,9 +31,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex-grow mb-4">
-                    <h2 class="text-xl font-semibold mb-4 leading-loose">About us</h2>
-                    <div>
+                <div class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 sm:border-none">
+                    <h2 id="footer-2" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleVisibility(event)">About us</h2>
+                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    <div class="list-dropdown hidden sm:block transition-all duration-500 pb-0 ease-in-out pb-4">
                         <ul>
                             <x-list-anchor-item><a href="#">Coronavirus</a></x-list-anchor-item>
                             <x-list-anchor-item><a href="#">Buy a Giftcard</a></x-list-anchor-item>
@@ -94,3 +97,23 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script>
+        function toggleVisibility(event) {
+            console.log(event)
+            let id = event.target.id.split('-')[1];
+
+            let span = event.target.nextElementSibling;
+
+            let div = document.getElementsByClassName('list-dropdown')[id];
+            if (div.classList.contains('hidden')) {
+                div.classList.remove('hidden');
+                span.classList.add('rotate-180');
+            } else {
+                div.classList.add('hidden');
+                span.classList.remove('rotate-180');
+            }
+        }
+    </script>
+@endpush
