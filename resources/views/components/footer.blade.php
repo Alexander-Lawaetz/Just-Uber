@@ -101,9 +101,7 @@
 @push('scripts')
     <script>
         function toggleVisibility(event) {
-            console.log(event)
             let id = event.target.id.split('-')[1];
-
             let span = event.target.nextElementSibling;
 
             let div = document.getElementsByClassName('list-dropdown')[id];
