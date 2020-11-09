@@ -83,7 +83,7 @@
     </style>
 @endpush
 
-@push('scrips')
+@push('scripts')
     <script>
         function checkPhoneKey(key) {
             return (key >= '0' && key <= '9') ||
