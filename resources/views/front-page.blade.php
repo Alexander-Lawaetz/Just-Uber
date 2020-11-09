@@ -12,6 +12,7 @@
     <div class="w-full -mt-16 -mb-8">
         <div class="relative w-full max-h-(screen-phone) sm:max-h-full h-40 sm:h-64 md:h-104">
             <div class="absolute overflow-hidden top-0 h-full w-full bg-cover bg-center" style="background-image: url({{ asset('/storage/DK_1920x420_Generic.jpg') }})"></div>
+            <div class="absolute top-0 w-full h-40 opacity-50 bg-gradient-to-b from-black"></div>
         </div>
         <div class="container mt-32 sm:mt-20 md:mt-10 lg:mt-0 px-4 mx-auto">
             <div class="relative dark:bg-dark-secondary bg-white shadow-md mx-auto max-w-3xl rounded-lg text-center p-4 md:py-8 -mt-40">
