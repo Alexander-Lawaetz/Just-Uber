@@ -6,13 +6,13 @@
                     <h2 class="text-xl font-semibold mb-4 leading-loose">Explore cuisines</h2>
                     <div>
                         <ul>
-                            <li><a href="#" class="py-2 hover:underline">Premium & Gourment</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Pizza</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Burgers</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Mexican</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Sushi</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Chinese</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Indian</a></li>
+                            <x-list-anchor-item><a href="#">Premium & Gourment</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Pizza</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Burgers</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Mexican</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Sushi</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Chinese</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Indian</a></x-list-anchor-item>
                         </ul>
                     </div>
                 </div>
@@ -20,12 +20,12 @@
                     <h2 class="text-xl font-semibold mb-4 leading-loose">Find your city</h2>
                     <div>
                         <ul>
-                            <li><a href="#" class="py-2 hover:underline">Copenhagen</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Roskilde</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Aarhus</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Odense</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Aalborg</a></li>
-                            <li><a href="#" class="py-2 hover:underline">More cities</a></li>
+                            <x-list-anchor-item><a href="#">Copenhagen</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Roskilde</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Aarhus</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Odense</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Aalborg</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">More cities</a></x-list-anchor-item>
                         </ul>
                     </div>
                 </div>
@@ -33,15 +33,15 @@
                     <h2 class="text-xl font-semibold mb-4 leading-loose">About us</h2>
                     <div>
                         <ul>
-                            <li><a href="#" class="py-2 hover:underline">Coronavirus</a></li>
-                            <li><a href="#" class="py-2 hover:underline">About Just Uber</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Buy a Giftcard</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Price promise</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Restuarant sign up</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Partner Center</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Cookie Policy</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Privacy Policy</a></li>
-                            <li><a href="#" class="py-2 hover:underline">Terms and Conditions</a></li>
+                            <x-list-anchor-item><a href="#">Coronavirus</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Buy a Giftcard</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">About Just Uber</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Price promise</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Restuarant sign up</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Partner Center</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Cookie Policy</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Privacy Policy</a></x-list-anchor-item>
+                            <x-list-anchor-item><a href="#">Terms and Conditions</a></x-list-anchor-item>
                         </ul>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                         <div class="flex">
                             <span><img class="h-4" src="{{ asset('storage/flag-icons/denmark.svg') }}" /></span>
                             <div class="flex items-center">
-                                <span class="ml-2">Danmark</span>
+                                <span class="ml-2">Denmark</span>
                                 <span class="ml-2 w-4 h-4"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                             </div>
                         </div>
