@@ -15,7 +15,7 @@
         </div>
         <div class="container mt-32 sm:mt-20 md:mt-10 lg:mt-0 px-4 mx-auto">
             <div class="relative dark:bg-dark-secondary bg-white shadow-md mx-auto max-w-3xl rounded-lg text-center p-4 md:py-8 -mt-40">
-                <h1 class="lg:text-5xl md:text-4xl text-3xl pb-1 sm:leading-loose tracking-wider font-bold dark:text-dark-important">Denmark's largest menu</h1>
+                <h1 class="lg:text-5xl md:text-4xl text-3xl pb-1 sm:leading-loose tracking-wider font-bold text-light-important dark:text-dark-important">Denmark's largest menu</h1>
                 <h2 class="lg:text-xl text-base pb-1 mb-2 font-light">Find restaurants delivery right now, near you</h2>
                 <div class="text-center">
                     <form class="flex flex-row relative w-full lg:max-w-xl mx-auto border dark:border-dark-hover overflow-hidden rounded">
@@ -24,14 +24,14 @@
                             <input id="zipSearch" class="w-full min-h-full px-4 pt-6 pb-2 text-bold dark:bg-dark-primary dark:text-dark-primary" onkeydown="return checkPhoneKey(event.key)" style="" id="search-input" type="text" autocomplete="false" pattern="\d{1,4}"  maxlength="4" title="Four digit zip code" required>
                             <span class="absolute top-1/4 left-0 ml-4 mt-1 transition-all duration-500 ease-in-out ">Enter your postcode</span>
                         </label>
-                        <input class="lg:text-xl text-base leading-relaxed tracking-wide font-bold px-4 py-2 cursor-pointer dark:bg-dark-important" type="submit" value="Find restaurants">
+                        <input class="lg:text-xl text-base leading-relaxed tracking-wide font-bold px-4 py-2 cursor-pointer text-light-secondary bg-light-important dark:bg-dark-important" type="submit" value="Find restaurants">
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <div class="container px-4 sm:px-8 mt-16 mb-6 mx-auto">
-        <h1 class="lg:text-4xl md:text-3xl text-2xl pb-1 font-bold dark:text-dark-important">Popular Cuisines</h1>
+        <h1 class="lg:text-4xl md:text-3xl text-2xl pb-1 font-bold text-light-important dark:text-dark-important">Popular Cuisines</h1>
         <p class="mb-4">Explore your favorites and order takeaway or pick up yourself</p>
         <div class="sm:flex sm:flex-row sm:justify-between w-full m-auto">
             <div class="sm:w-1/3 text-center h-40 relative">
