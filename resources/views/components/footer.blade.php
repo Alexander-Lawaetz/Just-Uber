@@ -4,7 +4,10 @@
             <div class="flex flex-col sm:flex-row">
                 <div class="relative flex-grow pt-4 sm:py-8  px-4 sm:px-8 border-b sm:border-none">
                     <h2 id="footer-0" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleVisibility(event)">Explore cuisines</h2>
-                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
+                        //https://heroicons.dev/
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
                     <div class="list-dropdown hidden sm:block transition-all duration-500 ease-in-out pb-4">
                         <ul>
                             <x-list-anchor-item><a href="#">Premium & Gourment</a></x-list-anchor-item>
@@ -19,7 +22,10 @@
                 </div>
                 <div class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 border-b sm:border-none">
                     <h2  id="footer-1" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleVisibility(event)">Find your city</h2>
-                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
+                        //https://heroicons.dev/
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
                     <div class="list-dropdown hidden sm:block transition-all duration-500 ease-in-out pb-4">
                         <ul>
                             <x-list-anchor-item><a href="#">Copenhagen</a></x-list-anchor-item>
@@ -33,7 +39,10 @@
                 </div>
                 <div class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 sm:border-none">
                     <h2 id="footer-2" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleVisibility(event)">About us</h2>
-                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
+                        //https://heroicons.dev/
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
                     <div class="list-dropdown hidden sm:block transition-all duration-500 pb-0 ease-in-out pb-4">
                         <ul>
                             <x-list-anchor-item><a href="#">Coronavirus</a></x-list-anchor-item>
@@ -100,7 +109,7 @@
 
 @push('scripts')
     <script>
-        function toggleVisibility(event) {
+        const toggleVisibility = (event) => setTimeout(function() {
             let id = event.target.id.split('-')[1];
             let span = event.target.nextElementSibling;
 
@@ -112,6 +121,6 @@
                 div.classList.add('hidden');
                 span.classList.remove('rotate-180');
             }
-        }
+        }, 200);
     </script>
 @endpush
