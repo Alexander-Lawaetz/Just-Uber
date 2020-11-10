@@ -10,7 +10,7 @@
                 @csrf
                 <div class="w-auto">
                     <label for="email">Email:</label><br>
-                    <input class="w-full p-3 my-3 bg-light-primary dark:bg-dark-primary border-2 border-gray-900 @error('email') is-invalid @enderror" id="email" type="email" name="email" placeholder="Type your email" required>
+                    <input class="w-full p-3 my-3 bg-light-primary dark:bg-dark-primary border-2 border-gray-900 @error('email') is-invalid @enderror" id="email" type="email" name="email" placeholder="Type your email" value="{{ old('name') }}" required>
                 </div>
                 @error('email')
                 <span class="text-red-600 text-sm">{{ $message }}</span>

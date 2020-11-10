@@ -11,14 +11,14 @@
                 @csrf
                 <div class="w-auto">
                     <label for="name">Name:</label><br>
-                    <input class="w-full p-3 my-3 bg-light-primary dark:bg-dark-primary border-2 border-gray-900 @error('name') is-invalid @enderror" id="name" type="text" name="name" placeholder="Type your name" autofocus autocomplete="off" required>
+                    <input class="w-full p-3 my-3 bg-light-primary dark:bg-dark-primary border-2 border-gray-900 @error('name') is-invalid @enderror" id="name" type="text" name="name" placeholder="Type your name" value="{{ old('name') }}" autofocus autocomplete="off" required>
                 </div>
                 @error('name')
                 <span class="text-red-600 text-sm">{{ $message }}</span>
                 @enderror
                 <div class="w-auto">
                     <label for="email">Email:</label><br>
-                    <input class="w-full p-3 my-3 bg-light-primary dark:bg-dark-primary border-2 border-gray-900 @error('email') is-invalid @enderror" id="email" type="email" name="email" placeholder="Type your email" autocomplete="off" required>
+                    <input class="w-full p-3 my-3 bg-light-primary dark:bg-dark-primary border-2 border-gray-900 @error('email') is-invalid @enderror" id="email" type="email" name="email" placeholder="Type your email" value="{{ old('email') }}" autocomplete="off" required>
                 </div>
                 @error('email')
                 <span class="text-red-600 text-sm">{{ $message }}</span>
