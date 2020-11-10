@@ -5,7 +5,7 @@
                 <div class="relative flex-grow pt-4 sm:py-8  px-4 sm:px-8 border-b sm:border-none">
                     <h2 id="footer-0" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleVisibility(event)">Explore cuisines</h2>
                     <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
-                        //https://heroicons.dev/
+                        <!-- https://heroicons.dev/ -->
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </span>
                     <div class="list-dropdown hidden sm:block transition-all duration-500 ease-in-out pb-4">
@@ -23,7 +23,7 @@
                 <div class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 border-b sm:border-none">
                     <h2  id="footer-1" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleVisibility(event)">Find your city</h2>
                     <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
-                        //https://heroicons.dev/
+                        <!-- https://heroicons.dev/ -->
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </span>
                     <div class="list-dropdown hidden sm:block transition-all duration-500 ease-in-out pb-4">
@@ -40,7 +40,7 @@
                 <div class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 sm:border-none">
                     <h2 id="footer-2" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleVisibility(event)">About us</h2>
                     <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
-                        //https://heroicons.dev/
+                        <!-- https://heroicons.dev/ -->
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </span>
                     <div class="list-dropdown hidden sm:block transition-all duration-500 pb-0 ease-in-out pb-4">
