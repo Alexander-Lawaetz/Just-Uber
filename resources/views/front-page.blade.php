@@ -31,6 +31,9 @@
                             <span class="hidden sm:block whitespace-no-wrap">Find restaurant</span>
                         </button>
                     </form>
+                    @error('postcode')
+                    <span class="text-red-600 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
             </div>
         </div>

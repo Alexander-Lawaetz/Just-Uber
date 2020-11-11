@@ -15,7 +15,7 @@ class RestaurantQueryController extends Controller
     public function __invoke(Request $request)
     {
         $data = $request->validate([
-            'postcode' => 'required|string:4'
+            'postcode' => 'required|min:4|max:4',
         ]);
 
         return redirect()
