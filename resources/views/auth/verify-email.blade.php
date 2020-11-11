@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="relative flex items-top justify-center min-h-screen sm:items-center sm:pt-0">
-        <div class="p-12 text-lg leading-7 font-semibold bg-light-secondary dark:bg-dark-secondary border-gray-900 rounded-lg">
+        <div class="container max-w-2xl p-12 text-lg leading-7 font-semibold bg-light-secondary dark:bg-dark-secondary border-gray-900 rounded-lg">
             <p class="mb-8 text-2xl">Email verification is required in order to order take away, please check your email for a verification link.</p>
             @if(session('status'))
                 <div>{{ session('status') }}</div>

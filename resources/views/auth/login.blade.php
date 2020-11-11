@@ -33,8 +33,8 @@
             <!-- Social media -->
             <a href="{{ route('password.request') }}" class="text-sm">Forgot password?</a>
             <nav class="text-sm">
-                <a href="#!">Terms of use.</a>
-                <a href="#!">Privacy policy</a>
+                <a href="#">Terms of use.</a>
+                <a href="#">Privacy policy</a>
             </nav>
         </div>
     </div>

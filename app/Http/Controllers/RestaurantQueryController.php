@@ -14,6 +14,10 @@ class FindRestaurants extends Controller
      */
     public function __invoke(Request $request)
     {
-        //
+        $data = $request->validate([
+           'postcode' => 'required|digits:4'
+        ]);
+
+        return redirect()->route('restaurant-filter', ['code' => $data->postcode]);
     }
 }

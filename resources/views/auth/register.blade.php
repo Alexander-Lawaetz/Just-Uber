@@ -41,8 +41,8 @@
             <a href="{{ route('password.request') }}" class="text-sm">Forgot password?</a>
             <p class="text-sm">Already have an account? <a href="{{ route('login') }}" class="text-light-important dark:text-dark-important">Login here</a></p>
             <nav class="text-sm">
-                <a href="#!">Terms of use.</a>
-                <a href="#!">Privacy policy</a>
+                <a href="#">Terms of use.</a>
+                <a href="#">Privacy policy</a>
             </nav>
             <!-- Social media -->
         </div>
