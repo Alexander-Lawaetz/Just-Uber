@@ -19,10 +19,10 @@
                 <h1 class="lg:text-5xl md:text-4xl text-3xl pb-1 sm:leading-loose tracking-wider font-bold text-light-important dark:text-dark-important">Denmark's largest menu</h1>
                 <h2 class="lg:text-xl text-base pb-1 mb-2 font-light">Find restaurants delivery right now, near you</h2>
                 <div class="text-center">
-                    <form class="flex flex-row relative w-full lg:max-w-xl mx-auto border dark:border-dark-hover overflow-hidden rounded">
+                    <form action="{{ route('restaurants.query') }}" method="post" class="flex flex-row relative w-full lg:max-w-xl mx-auto border dark:border-dark-hover overflow-hidden rounded">
                         @csrf
                         <label class="w-full min-h-full">
-                            <input id="zipSearch" class="w-full min-h-full px-4 pt-6 pb-2 text-bold dark:bg-dark-primary dark:text-dark-primary" onkeydown="return checkPhoneKey(event.key)" style="" id="search-input" type="text" autocomplete="false" pattern="\d{1,4}"  maxlength="4" title="Four digit zip code" required>
+                            <input id="zipSearch" class="w-full min-h-full px-4 pt-6 pb-2 text-bold dark:bg-dark-primary dark:text-dark-primary" onkeydown="return checkPhoneKey(event.key)" id="search-input" name="postcode" type="text" value="{{ $postcode  }}" autocomplete="false" pattern="\d{1,4}" maxlength="4" title="Four digit zip code" required>
                             <span class="absolute top-1/4 left-0 ml-4 mt-1 transition-all duration-500 ease-in-out text-sm sm:text-base">Enter your postcode</span>
                         </label>
                         <button class="bg-light-important dark:bg-dark-important hover:bg-light-hover dark:hover:bg-dark-hover text-light-secondary font-bold py-2 px-4 inline-flex items-center">
