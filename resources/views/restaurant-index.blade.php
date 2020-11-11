@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-
+    <?php echo $postcode; ?>
 @endsection
 
 @section('footer')
