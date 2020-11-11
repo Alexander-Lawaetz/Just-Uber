@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RestaurantQueryController;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('front-page');
+    $oldPostcode = Cookie::get('postcode');
+
+    return view('front-page', ['postcode' => $oldPostcode]);
 });
 
-Route::get('/home', function () {
-    return view('welcome');
-})->middleware('auth');
+Route::get('/area/{postcode}', function ($postcode) {
+    return view('restaurant-index', ['postcode' => $postcode]);
+})->name('restaurants.filter');
+
+Route::post('/area/search-query' , [RestaurantQueryController::class, '__invoke'])->name('restaurants.query');
