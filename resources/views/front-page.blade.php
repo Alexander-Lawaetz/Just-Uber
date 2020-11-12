@@ -3,9 +3,7 @@
 @section('title', 'Just Uber - Your taste, your choose')
 
 @section('navbar')
-    <header class="container px-4 mx-auto">
-        <x-navbar class="relative h-16 z-10 bg-transparent"/>
-    </header>
+    <x-header class="relative z-10 bg-transparent text-light-secondary dark:text-dark-primary"/>
 @endsection
 
 @section('content')

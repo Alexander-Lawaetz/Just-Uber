@@ -1,4 +1,4 @@
-<div class="w-full">
+<footer class="w-full">
     <div class="bg-light-third dark:bg-dark-secondary">
         <div class="container mx-auto">
             <div class="flex flex-col sm:flex-row">
@@ -105,7 +105,7 @@
             </div>
         </div>
     </div>
-</div>
+</footer>
 
 @push('scripts')
     <script>

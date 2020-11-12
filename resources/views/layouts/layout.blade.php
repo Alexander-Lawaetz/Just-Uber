@@ -19,14 +19,13 @@
         </style>
         @stack('styles')
     </head>
-    <body class="antialiased">
+    <body class="antialiased min-h-screen bg-light-primary dark:bg-dark-primary text-light-primary dark:text-dark-primary">
         @yield('navbar')
 
-        <div class="relative min-h-screen bg-light-primary dark:bg-dark-primary text-light-primary dark:text-dark-primary">
+        <main>
             @yield('content')
-
-            @yield('footer')
-        </div>
+        </main>
+        @yield('footer')
 
         @stack('scripts')
     </body>
