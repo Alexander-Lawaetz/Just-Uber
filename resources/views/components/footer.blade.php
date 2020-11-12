@@ -73,9 +73,9 @@
                 <div>
                     <h2 class="text-xl font-semibold mb-4 leading-loose">Follow Us</h2>
                     <div class="flex flex-row sm:justify-between justify-items-start">
-                        <a href="#"><x-blogsvg class="text-light-important dark:text-dark-important"/></a>
-                        <a href="#" class="ml-4"><x-facebooksvg class="text-light-important dark:text-dark-important"/></a>
-                        <a href="#" class="ml-4"><x-twittersvg class="text-light-important dark:text-dark-important"/></a>
+                        <a href="#"><x-icons.blog-svg class="text-light-important dark:text-dark-important"/></a>
+                        <a href="#" class="ml-4"><x-icons.facebook-svg class="text-light-important dark:text-dark-important"/></a>
+                        <a href="#" class="ml-4"><x-icons.twitter-svg class="text-light-important dark:text-dark-important"/></a>
                     </div>
                 </div>
             </div>
