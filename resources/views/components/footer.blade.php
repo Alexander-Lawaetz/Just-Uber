@@ -5,8 +5,7 @@
                 <div class="relative flex-grow pt-4 sm:py-8  px-4 sm:px-8 border-b sm:border-none">
                     <h2 id="footer:d6e653d8-2508-4018-8e59-b7d16521411c" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleDropdown(event, 'rotate-180')">Explore cuisines</h2>
                     <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
-                        <!-- https://heroicons.dev/ -->
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <x-icons.outline-chevron-down-svg class="h-6 w-6" />
                     </span>
                     <div id="d6e653d8-2508-4018-8e59-b7d16521411c" class="hidden sm:block transition-all duration-500 ease-in-out pb-4">
                         <ul>
@@ -23,8 +22,7 @@
                 <div class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 border-b sm:border-none">
                     <h2  id="footer:b93948da-4784-4b6e-b614-243ca0b8a82a" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleDropdown(event, 'rotate-180')">Find your city</h2>
                     <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
-                        <!-- https://heroicons.dev/ -->
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <x-icons.outline-chevron-down-svg class="h-6 w-6" />
                     </span>
                     <div id="b93948da-4784-4b6e-b614-243ca0b8a82a" class="hidden sm:block transition-all duration-500 ease-in-out pb-4">
                         <ul>
@@ -40,8 +38,7 @@
                 <div class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 sm:border-none">
                     <h2 id="footer:de81555d-65d4-4572-93fe-9705f5662118" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleDropdown(event, 'rotate-180')">About us</h2>
                     <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
-                        <!-- https://heroicons.dev/ -->
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <x-icons.outline-chevron-down-svg class="h-6 w-6" />
                     </span>
                     <div id="de81555d-65d4-4572-93fe-9705f5662118" class="hidden sm:block transition-all duration-500 pb-0 ease-in-out pb-4">
                         <ul>
@@ -66,8 +63,8 @@
                 <div class="mb-4">
                     <h2 class="text-xl font-semibold mb-4 leading-loose">Download our app</h2>
                     <div class="flex flex-row sm:justify-between justify-items-start">
-                        <a class="cursor-not-allowed"><img src="{{ asset('storage/DK-app-store-icon.svg') }}"></a>
-                        <a class="cursor-not-allowed ml-4"><img src="{{ asset('storage/DK-google-play-icon.svg') }}"></a>
+                        <x-icons.app-store-svg class="cursor-not-allowed" />
+                        <x-icons.google-store-svg class="ml-4 cursor-not-allowed" />
                     </div>
                 </div>
                 <div>
@@ -87,7 +84,7 @@
                 <div class="py-4 pl-6 sm:p-0 order-last sm:order-first">
                     <button class="hover:underline h-full">
                         <div class="flex">
-                            <span><img class="h-4" src="{{ asset('storage/flag-icons/denmark.svg') }}" /></span>
+                            <span><x-icons.flags.denmark-svg class="h-4" /></span>
                             <div class="flex items-center">
                                 <span class="ml-2">Denmark</span>
                                 <span class="ml-2 w-4 h-4"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
@@ -96,10 +93,10 @@
                     </button>
                 </div>
                 <div class="p-4 sm:p-0 sm:border-none border-b border-dark-primary">
-                    <div class="flex flex-row h-8">
-                        <img class="h-full" src="{{ asset('storage/dk-payment.svg') }}" />
-                        <img class="ml-4 h-full" src="{{ asset('storage/je-payment-logos-mastercard.svg') }}" />
-                        <img class="ml-4 h-full" src="{{ asset('storage/je-payment-logos-visa.svg') }}" />
+                    <div class="flex flex-row">
+                        <x-icons.just-eat-payment-dk-svg class="h-8" />
+                        <x-icons.just-eat-payment-mastercard-svg class="ml-4 h-8" />
+                        <x-icons.just-eat-payment-visa-svg class="ml-4 h-8" />
                     </div>
                 </div>
             </div>
