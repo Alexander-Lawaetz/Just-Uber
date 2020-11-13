@@ -41,17 +41,17 @@
         <p class="mb-4">Explore your favorites and order takeaway or pick up yourself</p>
         <div class="sm:flex sm:flex-row sm:justify-between w-full m-auto">
             <div class="sm:w-1/3 text-center h-40 relative">
-                <a href="#">
+                <a class="cursor-not-allowed">
                     <img class="object-cover h-full w-full" loading="lazy" src="https://via.placeholder.com/387x150.png/2b2b35/eeeeee?text=https://placeholder.com/">
                     <span class="lg:text-2xl absolute bottom-0 inset-x-0 mb-3">Italian</span></a>
             </div>
             <div class="sm:w-1/3 my-4 sm:my-0 sm:ml-6 text-center h-40 relative">
-                <a href="#">
+                <a class="cursor-not-allowed">
                     <img class="object-cover h-full w-full" loading="lazy" src="https://via.placeholder.com/387x150.png/2b2b35/eeeeee?text=https://placeholder.com/">
                     <span class="lg:text-2xl absolute bottom-0 inset-x-0 mb-3">American</span></a>
             </div>
             <div class=" sm:w-1/3 sm:ml-6 text-center h-40 relative">
-                <a href="#">
+                <a class="cursor-not-allowed">
                     <img class="object-cover h-full w-full" loading="lazy" src="https://via.placeholder.com/387x150.png/2b2b35/eeeeee?text=https://placeholder.com/">
                     <span class="lg:text-2xl absolute bottom-0 inset-x-0 mb-3">Japanese</span>
                 </a>
@@ -68,8 +68,8 @@
                     <h2 class="text-2xl md:text-3xl my-4 font-semibold">Find your flavor even faster</h2>
                     <p class="my-4">Download the Just Uber app for faster ordering and more personalised recommendations</p>
                     <div class="flex flex-row justify-between sm:justify-center p-2">
-                        <a href="#"><img class="" src="{{ asset('storage/DK-app-store-icon.svg') }}"></a>
-                        <a href="#" class="sm:ml-4"><img src="{{ asset('storage/DK-google-play-icon.svg') }}"></a>
+                        <a class="cursor-not-allowed"><img class="" src="{{ asset('storage/DK-app-store-icon.svg') }}"></a>
+                        <a class="cursor-not-allowed sm:ml-4"><img src="{{ asset('storage/DK-google-play-icon.svg') }}"></a>
                     </div>
                 </div>
             </div>
