@@ -1,3 +1,12 @@
+## Requirements
+Windows? Consider using [laragon](https://laragon.org/)
+
+``php`` [Laravel version 8 requirements](https://laravel.com/docs/8.x/installation#server-requirements)
+
+``composer``
+
+``npm``
+
 ## Setup
 ```
 git clone https://github.com/alexander-lawaetz/just-uber
@@ -6,8 +15,9 @@ composer install
 npm install && npm run dev
 ```
 
-copy-paste .env.example to .env
-setup mailtrap.io account -> update .env file for database and mailtrap
+copy-paste ``.env.example`` to ``.env``
+
+setup mailtrap.io account -> update ``.env`` file for database and mailtrap
 
 
 php artisan serve
