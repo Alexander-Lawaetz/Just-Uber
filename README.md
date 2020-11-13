@@ -1,3 +1,10 @@
+## Introduction
+This projects purpose is to mimic a proportion of Just Eat's [dk site](just-eat.dk) [login, search, filter, payment]
+
+The project is to be buildt using [Laravel](https://laravel.com/) along with [tailwindcss](https://tailwindcss.com/) framework
+
+ftp will be handled by [mailtrap](https://mailtrap.io/), billing by [Cashier (stripe)](https://laravel.com/docs/8.x/billing) with local mysql 5.7.24 database
+
 ## Requirements
 Windows? Consider using [laragon](https://laragon.org/)
 
