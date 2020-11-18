@@ -19,7 +19,7 @@
         </style>
         @stack('styles')
     </head>
-    <body class="antialiased min-h-screen bg-light-primary dark:bg-dark-primary text-light-primary dark:text-dark-primary">
+    <body class="antialiased min-h-screen bg-light-secondary dark:bg-dark-primary text-light-primary dark:text-dark-primary">
         @yield('navbar')
 
         <main>

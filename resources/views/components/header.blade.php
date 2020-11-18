@@ -2,20 +2,20 @@
     <div {{ $attributes->merge(['class' => 'flex justify-between items-center w-full p-2 container px-4 mx-auto h-16']) }}>
         <div>
             <a href="{{ url('/') }}">
-                <x-icons.just-eat-svg />
+                <x-icons.just-eat.logo-svg />
             </a>
         </div>
 
         @if (Route::has('login'))
             <div class="flex text-lg font-bold">
                 <a class="flex flex-row items-center cursor-not-allowed hover:underline">
-                    <x-icons.solid-gift-svg class="h-6" />
+                    <x-icons.gift-solid-svg class="h-6" />
                     <span class="ml-1">For you</span>
                 </a>
                 @auth
                     <div id="hover:6911dfb7-8940-42ba-8a3f-f25f24b69ddf" class="relative flex flex-row items-end">
                         <button class="flex flex-row items-center ml-6 hover:underline">
-                            <x-icons.solid-user-circle-svg class="h-6" />
+                            <x-icons.user-circle-solid-svg class="h-6" />
                             <span class="ml-1">{{ Auth::user()->name }}</span>
                         </button>
                         <div id="6911dfb7-8940-42ba-8a3f-f25f24b69ddf" class="absolute hidden z-10 top-0 right-0 pt-4 mt-6">
@@ -37,7 +37,7 @@
                     </div>
                 @else
                     <a href="{{ route('login') }}" class="ml-6 hover:underline flex flex-row items-center">
-                        <x-icons.solid-user-circle-svg class="h-6" />
+                        <x-icons.user-circle-solid-svg class="h-6" />
                         <span class="ml-1">Login</span>
                     </a>
                 @endif

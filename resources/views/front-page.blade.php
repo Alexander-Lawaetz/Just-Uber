@@ -24,7 +24,7 @@
                             <span class="absolute top-1/4 left-0 ml-4 mt-1 transition-all duration-500 ease-in-out text-sm sm:text-base">Enter your postcode</span>
                         </label>
                         <button class="bg-light-important dark:bg-dark-important hover:bg-light-hover dark:hover:bg-dark-hover text-light-secondary font-bold py-2 px-4 inline-flex items-center">
-                            <x-icons.search-svg class="sm:hidden w-6 h-6" />
+                            <x-icons.search-outline-svg class="sm:hidden w-6 h-6" />
                             <span class="hidden sm:block whitespace-no-wrap">Find restaurant</span>
                         </button>
                     </form>
@@ -67,8 +67,8 @@
                     <h2 class="text-2xl md:text-3xl my-4 font-semibold">Find your flavor even faster</h2>
                     <p class="my-4">Download the Just Uber app for faster ordering and more personalised recommendations</p>
                     <div class="flex flex-row justify-between sm:justify-center p-2">
-                        <a class="cursor-not-allowed"><x-icons.app-store-svg /></a>
-                        <a class="cursor-not-allowed sm:ml-4"><x-icons.google-store-svg /></a>
+                        <a class="cursor-not-allowed"><x-icons.just-eat.app-store-svg /></a>
+                        <a class="cursor-not-allowed sm:ml-4"><x-icons.just-eat.google-store-svg /></a>
                     </div>
                 </div>
             </div>
