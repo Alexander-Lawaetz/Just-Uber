@@ -84,7 +84,7 @@
                 <div class="py-4 pl-6 sm:p-0 order-last sm:order-first">
                     <button class="hover:underline h-full">
                         <div class="flex">
-                            <span><x-icons.flags.denmark-svg class="h-4" /></span>
+                            <span><x-icons.just-eat.flags.denmark-svg class="h-4" /></span>
                             <div class="flex items-center">
                                 <span class="ml-2">Denmark</span>
                                 <span class="ml-2 w-4 h-4"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
