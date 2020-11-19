@@ -87,7 +87,7 @@
                             <span><x-icons.just-eat.flags.denmark-svg class="h-4" /></span>
                             <div class="flex items-center">
                                 <span class="ml-2">Denmark</span>
-                                <span class="ml-2 w-4 h-4"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                                <x-icons.chevron-down-outline-svg class="ml-2 h-4 w-4" />
                             </div>
                         </div>
                     </button>
@@ -109,22 +109,18 @@
         function toggleDropdown (event, styling) {
             <!-- element event, or children event (button) -->
             let id = event.target.id.split(':')[1] || event.target.parentElement.id.split(':')[1];
-            console.log(id)
-            if (styling === undefined) {
-                console.log('dropdown 1')
 
+            if (styling === undefined) {
                 toggleElementVisibility(id)
                 return
             }
             let element = event.target.nextElementSibling;
-            console.log('dropdown 2')
 
             toggleElementVisibility(id, toggleElementRotation(element, styling))
         }
 
         function toggleElementVisibility (id, callback) {
             let div = document.getElementById(id);
-            console.log(div)
             if (div.classList.contains('hidden')) {
                 div.classList.remove('hidden');
             } else {
