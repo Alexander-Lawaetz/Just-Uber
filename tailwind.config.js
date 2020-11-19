@@ -65,6 +65,10 @@ module.exports = {
             }
         },
     },
-    variants: {},
+    variants: {
+        extend: {
+            scale: ['active', 'group-hover', 'group-focus'],
+        }
+    },
     plugins: [],
 }
