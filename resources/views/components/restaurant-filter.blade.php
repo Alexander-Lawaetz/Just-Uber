@@ -3,7 +3,7 @@
         <x-icons.just-eat.cuisine-svg class="h-6 w-6 mr-2" />
         {{ $title }}
     </div>
-    <button id="{{ $group }}" type="button" onclick="clearCheckmarks(event)" class="text-base text-blue-500 font-bold">Reset</button>
+    <button id="{{ $group }}[]" type="button" onclick="clearCheckmarks(event)" class="text-base text-blue-500 font-bold">Reset</button>
 </h2>
 
 <div {{ $attributes }}>
@@ -17,10 +17,11 @@
                 <input
                     class="form-tick appearance-none h-6 w-6 mr-2 border border-gray-300 rounded-md checked:bg-light-important dark:bg-light-primary dark:checked:bg-dark-important dark:checked:border-transparent focus:outline-none"
                     type="checkbox"
-                    name="{{ $group }}"
-                    value="{{ $items["identifier"] }}"
+                    name="{{ $group }}[]"
+                    value="{{ $items["value"] }}"
+                    {{ isset($_GET[$group]) && strpos(implode(',', $_GET[$group]), $items["value"]) !== false  ? 'checked=true' : '' }}
                 />
-                {{ $items["identifier"] }}
+                {{ $items["description"] }}
             </label>
         </div>
     @empty
@@ -43,15 +44,17 @@
 @push('scripts')
     <script>
         function clearCheckmarks(event) {
-            let target = event.target.id;
-            let checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+            let groupTarget = event.target.id;
 
-            for (let checkbox of checkboxes) {
-                if (checkbox.name == target)
-                    checkbox.checked = false;
-            }
+            Array.from(document.querySelectorAll('input[type=checkbox]:checked')).forEach(
+                checkbox => {
+                    if (checkbox.name == groupTarget) checkbox.checked = false;
+                }
+            );
 
-            console.log(checkboxes)
+            setTimeout(function() {
+                onSubmit();
+            }, 50);
         }
     </script>
 @endpush

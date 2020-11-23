@@ -21,25 +21,29 @@ Route::get('/', function () {
     return view('front-page', ['postcode' => $oldPostcode]);
 });
 
-Route::get('/area/{postcode}', function () {
+Route::get('/area/{postcode}', function ($postcode) {
     $cuisines = (object) [
         'title' => 'cuisines',
         'group' => 'cuisines',
-        'data' => [['identifier' => 'american'], ['identifier' => 'danish']]
+        'data' => [
+            ['description' => 'american', 'value' => 'american'],
+            ['description' => 'danish', 'value' => 'danish'],
+            ['description' => 'cafe', 'value' => 'cafe'],
+        ]
     ];
     $refines = (object) [
         'title' => 'filters',
         'group' => 'refines',
         'data' => [
-            ['identifier' => 'special offers'],
-            ['identifier' => 'free delivery'],
-            ['identifier' => '5+ stars'],
-            ['identifier' => 'open now'],
-            ['identifier' => 'pick up'],
-            ['identifier' => 'new'],
+            ['description' => 'special offers', 'value' => 'with_discount'],
+            ['description' => 'free delivery', 'value' => 'free_delivery'],
+            ['description' => '5+ stars', 'value' => 'five_star'],
+            ['description' => 'open now', 'value' => 'open_now'],
+            ['description' => 'pick up', 'value' => 'pick_up'],
+            ['description' => 'new', 'value' => 'new'],
         ],
     ];
-    return view('restaurant-index', ['cuisines' => $cuisines], ['refines' => $refines]);
+    return view('restaurant-index', ['cuisines' => $cuisines, 'refines' => $refines, 'postcode' => $postcode]);
 })->name('restaurants.filter');
 
 Route::post('/area/search-query' , [RestaurantQueryController::class, '__invoke'])->name('restaurants.query');

@@ -11,12 +11,13 @@
         <div class="container px-4 sm:px-8 mb-8 mx-auto">
             <div class="flex items-baseline mb-4">
                 <!-- TODO implement dynamic number of resaurants reference -->
-                <h2 class="text-2xl ">99 restaurants in 5200 Odense V</h2>
+                <h2 class="text-2xl ">99 restaurants in {{ $postcode }} Odense V</h2>
                 <a href="{{ '/' }}" class="ml-4 text-blue-500 font-bold">Change location</a>
             </div>
             <div class="flex">
                 <div>
-                    <form class="w-64">
+                    <form id="restaurant-query-filter" action="{{ route('restaurants.filter', ['postcode' => $postcode]) }}" method="get" class="w-64">
+                        {{--<input class="hidden" type="text" name="postcode" value="{{ $postcode }}"/>--}}
                         <div>
                             <x-restaurant-filter :title="$cuisines->title" :group="$cuisines->group" :list="$cuisines->data" />
                         </div>
@@ -34,3 +35,11 @@
 @section('footer')
     <x-footer />
 @endsection
+
+@push('scripts')
+    <script>
+        function onSubmit() {
+            document.getElementById('restaurant-query-filter').submit();
+        }
+    </script>
+@endpush
