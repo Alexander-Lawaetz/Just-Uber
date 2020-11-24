@@ -1,10 +1,10 @@
-<h2 class="flex justify-between mb-4 min-w-full text-xl my-1 font-light">
-    <div class="flex capitalize">
+<div class="flex justify-between mb-4 min-w-full text-xl my-1 font-light">
+    <h2 class="flex capitalize">
         <x-icons.just-eat.cuisine-svg class="h-6 w-6 mr-2" />
         {{ $title }}
-    </div>
+    </h2>
     <button id="{{ $group }}[]" type="button" onclick="clearCheckmarks(event)" class="text-base text-blue-500 font-bold">Reset</button>
-</h2>
+</div>
 
 <div {{ $attributes }}>
     @forelse ($list as $items)

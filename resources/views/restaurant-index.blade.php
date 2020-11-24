@@ -25,7 +25,9 @@
                         </div>
                     </form>
                 </div>
-
+                <div class="ml-6 w-full">
+                    <x-restaurant-list :restaurants="$restaurants"/>
+                </div>
             </div>
         </div>
     </div>
