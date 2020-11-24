@@ -8,25 +8,32 @@
 
 <div {{ $attributes }}>
     @forelse ($list as $items)
-        @if ($loop->iteration > 8 && !$showAll)
-            <button>View more <span><x-icons.chevron-down-outline-svg class="h-5 w-5" /></span></button>
-            @break
-        @endif
-        <div class="my-2 bg-light-primary dark:bg-dark-secondary dark:hover:text-dark-important dark:text-light-secondary rounded-lg">
+        <div class="{{ $loop->iteration > 8 ? $explodeUUID(). ' hidden' : '' }} my-2 bg-light-primary dark:bg-dark-secondary dark:hover:text-dark-important dark:text-light-secondary rounded-lg">
             <label class="relative flex items-end p-2 capitalize">
                 <input
                     class="form-tick appearance-none h-6 w-6 mr-2 border border-gray-300 rounded-md checked:bg-light-important dark:bg-light-primary dark:checked:bg-dark-important dark:checked:border-transparent focus:outline-none"
                     type="checkbox"
                     name="{{ $group }}[]"
                     value="{{ $items["value"] }}"
-                    {{ isset($_GET[$group]) && strpos(implode(',', $_GET[$group]), $items["value"]) !== false  ? 'checked=true' : '' }}
+                    {{ isset($_GET[$group]) && strpos(implode(',', $_GET[$group]), $items["value"]) !== false  ? 'checked' : '' }}
+                    onchange="onSubmit(event)"
                 />
                 {{ $items["description"] }}
             </label>
         </div>
+        @if ($loop->iteration > 8 && $loop->last)
+            <button
+                id="{{ $getUUID() }}"
+                name="expand-button"
+                type="button"
+                class="flex items-center"
+                onclick="expandCheckmarks(this.id)"
+            >View more<span class="transform"><x-icons.chevron-down-outline-svg class="h-4 w-4" /></span></button>
+        @endif
     @empty
-        <p>No users</p>
+        <p>No data</p>
     @endforelse
+
 </div>
 
 @push('styles')
@@ -55,6 +62,32 @@
             setTimeout(function() {
                 onSubmit();
             }, 50);
+        }
+
+        function expandCheckmarks(id) {
+            let className = id.split(':')[1];
+
+            Array.from(document.getElementsByClassName(className)).forEach(
+                element => {
+                    if (element.classList.contains('hidden')) {
+                        element.classList.remove('hidden');
+                    } else {
+                        element.classList.add('hidden');
+                    }
+                }
+            )
+
+            let button = document.getElementById(id);
+            let span = document.getElementById(id).firstElementChild;
+
+            if(span.classList.contains('rotate-180')) {
+                span.classList.remove('rotate-180');
+                button.firstChild.data = 'View more';
+            } else {
+                span.classList.add('rotate-180');
+                button.firstChild.data = 'View less';
+            }
+
         }
     </script>
 @endpush

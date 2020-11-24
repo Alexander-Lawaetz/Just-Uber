@@ -21,6 +21,7 @@ Route::get('/', function () {
     return view('front-page', ['postcode' => $oldPostcode]);
 });
 
+// TODO Implenent database queries
 Route::get('/area/{postcode}', function ($postcode) {
     $cuisines = (object) [
         'title' => 'cuisines',
@@ -29,6 +30,17 @@ Route::get('/area/{postcode}', function ($postcode) {
             ['description' => 'american', 'value' => 'american'],
             ['description' => 'danish', 'value' => 'danish'],
             ['description' => 'cafe', 'value' => 'cafe'],
+            ['description' => 'cafe', 'value' => 'cafe'],
+            ['description' => 'cafe', 'value' => 'cafe'],
+            ['description' => 'cafe', 'value' => 'cafe'],
+            ['description' => 'cafe', 'value' => 'cafe'],
+            ['description' => 'cafe', 'value' => 'cafe'],
+            ['description' => 'cafe', 'value' => 'cafe'],
+            ['description' => 'cafe', 'value' => 'cafe'],
+            ['description' => 'cafe', 'value' => 'cafe'],
+            ['description' => 'cafe', 'value' => 'cafe'],
+            ['description' => 'danish', 'value' => 'danish'],
+
         ]
     ];
     $refines = (object) [
