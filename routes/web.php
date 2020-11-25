@@ -57,40 +57,40 @@ Route::get('/area/{postcode}', function ($postcode) {
     ];
     $restaurants = [
         (object)[
-            'name' => 'Pizza Crosa',
+            'name' => 'Crispy House Pizza',
             'reputation' => (object) [
-                'ratings' => 12,
-                'stars' => 4.2,
+                'ratings' => 429,
+                'avg_stars' => 5.5,
             ],
             'main_dishes' => [
                 'Italian',
-                'Pizza',
+                'Burger',
             ],
             'details' => (object) [
-                'opening_hours' => ['09:30:00', '21:00:00'],
+                'opening_hours' => ['11:30:00', '21:00:00'],
                 'take_away' => (object) [
-                    'min_order' => 100,
-                    'deliver_fee' => 25,
-                    'currency' => 'dkk',
+                    'min_order' => 80,
+                    'deliver_fee' => 29,
+                    'currency_sign' => 'dkk',
                 ],
             ],
         ],
         (object)[
-            'name' => 'Café Victoria',
+            'name' => 'Bolbro Grill & Pizza',
             'reputation' => (object) [
-                'ratings' => 88,
-                'stars' => 4.0,
+                'ratings' => 1215,
+                'avg_stars' => 5.2,
             ],
             'main_dishes' => [
-                'Danish',
-                'Premium & Gourmet',
+                'italian',
+                'American',
             ],
             'details' => (object) [
-                'opening_hours' => ['08:30:00', '17:00:00'],
+                'opening_hours' => ['12:00:00', '21:00:00'],
                 'take_away' => (object) [
                     'min_order' => null,
-                    'deliver_fee' => 79,
-                    'currency' => 'dkk',
+                    'deliver_fee' => 29,
+                    'currency_sign' => 'dkk',
                 ],
             ],
         ],
@@ -98,7 +98,7 @@ Route::get('/area/{postcode}', function ($postcode) {
             'name' => 'Restaurant Workwik',
             'reputation' => (object) [
                 'ratings' => 637,
-                'stars' => 4.0,
+                'avg_stars' => 4.0,
             ],
             'main_dishes' => [
                 'Sushi',
