@@ -71,7 +71,7 @@ Route::get('/area/{postcode}', function ($postcode) {
                 'take_away' => (object) [
                     'min_order' => 80,
                     'deliver_fee' => 29,
-                    'currency_sign' => 'dkk',
+                    'currency_sign' => 'kr',
                 ],
             ],
         ],
@@ -90,7 +90,7 @@ Route::get('/area/{postcode}', function ($postcode) {
                 'take_away' => (object) [
                     'min_order' => null,
                     'deliver_fee' => 29,
-                    'currency_sign' => 'dkk',
+                    'currency_sign' => 'kr',
                 ],
             ],
         ],

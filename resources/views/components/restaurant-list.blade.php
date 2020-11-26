@@ -10,7 +10,7 @@
                             <img class="absolute h-16 w-16 right-0 inset-y-1/4 content-center -mr-8 border-4 border-light-third dark:border-dark-secondary" src="{{ asset('storage/crispy-house-pizza.gif') }}" alt="{{ $restaurant->name }}" />
                         </div>
                         <div class="flex w-full h-full justify-between divide-x divide-gray-600">
-                            <div class="text-left my-auto">
+                            <div class="w-full text-left my-auto">
                                 <h2 class="pb-1 font-bold">{{ $restaurant->name }}</h2>
                                 <div class="flex items-center pb-1">
                                     @for($i = 0; $i < 6; $i++)
@@ -20,9 +20,22 @@
                                 </div>
                                 <p class="text-sm font-bold">{{ implode(', ', $restaurant->main_dishes) }}</p>
                             </div>
-                            <div class="w-52 pl-2">
-                                <div class="text-left text-sm">
-
+                            <div class="w-full pl-2">
+                                <div class="flex flex-col justify-between h-full text-left my-auto text-sm">
+                                    <div class="flex items-center mt-6">
+                                        @if(empty($restaurant->details->take_away))
+                                            <x-icons.just-eat.self-pickup-svg class="h-6 w-6" />
+                                            <p class="ml-2">Only self pickup</p>
+                                        @else
+                                            <x-icons.just-eat.money-svg class="h-6 w-6" />
+                                            {{-- TODO fix shorten this statement --}}
+                                            <p class="ml-2">
+                                                Delivery {{ !empty($restaurant->details->take_away->deliver_fee) ? $restaurant->details->take_away->deliver_fee . ' ' . $restaurant->details->take_away->currency_sign . '.' : 'FREE' }}
+                                                - {{ !empty($restaurant->details->take_away->min_order) ? 'Min. order ' . $restaurant->details->take_away->min_order . ' ' . $restaurant->details->take_away->currency_sign : 'No min. order' }}
+                                            </p>
+                                        @endif
+                                    </div>
+                                    <p>Opening hours: </br> {{ implode(' - ', $restaurant->details->opening_hours) }}</p>
                                 </div>
                             </div>
                         </div>
