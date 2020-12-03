@@ -44,6 +44,10 @@ class RestaurantFilter extends Component
         return Str::of($this->uuid)->explode(':')[1];
     }
 
+    public function checked(string $group, string $value) : bool {
+        return isset($_GET[$group]) && strpos(implode(',', $_GET[$group]), $value) !== false;
+    }
+
     /**
      * Get the view / contents that represent the component.
      *

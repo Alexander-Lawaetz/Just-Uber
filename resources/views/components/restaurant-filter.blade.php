@@ -9,14 +9,14 @@
 <div {{ $attributes }}>
     @forelse ($list as $item)
 
-        <div class="{{ $loop->iteration > 8 ? $explodeUUID(). ' hidden' : '' }} my-2 bg-light-primary dark:bg-dark-secondary dark:hover:text-dark-important dark:text-light-secondary rounded-lg">
+        <div class="{{ $loop->iteration > 8 && !$checked($item->group, $item->value) ? $explodeUUID(). ' hidden' : '' }} my-2 bg-light-primary dark:bg-dark-secondary dark:hover:text-dark-important dark:text-light-secondary rounded-lg">
             <label class="relative flex items-end p-2 capitalize">
                 <input
                     class="form-tick appearance-none h-6 w-6 mr-2 border border-gray-300 rounded-md checked:bg-light-important dark:bg-light-primary dark:checked:bg-dark-important dark:checked:border-transparent focus:outline-none"
                     type="checkbox"
-                    name="{{ $group }}[]"
+                    name="{{ $item->group }}[]"
                     value="{{ $item->value }}"
-                    {{ isset($_GET[$group]) && strpos(implode(',', $_GET[$group]), $item->value) !== false  ? 'checked' : '' }}
+                    {{ $checked($item->group, $item->value) ? 'checked' : '' }}
                     onchange="onSubmit(event)"
                 />
                 {{ $item->description }}
