@@ -14,18 +14,16 @@
                 <h2 class="text-2xl ">99 restaurants in {{ $postcode }} Odense V</h2>
                 <a href="{{ '/' }}" class="ml-4 text-blue-500 font-bold">Change location</a>
             </div>
-            <div class="flex">
+            <div class="flex-none sm:flex">
                 <div>
                     <form id="restaurant-query-filter" action="{{ route('restaurants.filter', ['postcode' => $postcode]) }}" method="get" class="w-64">
-                        <div>
-                            <x-restaurant-filter :title="$cuisines->title" :group="$cuisines->group" :list="$cuisines->data" />
-                        </div>
-                        <div>
+                        <div class="">
+                            <x-restaurant-filter :title="$cuisines->title" :group="$cuisines->group" :list="$cuisines->data" class="mb-4"/>
                             <x-restaurant-filter :title="$refines->title" :group="$refines->group" :list="$refines->data" />
                         </div>
                     </form>
                 </div>
-                <div class="ml-6 w-full">
+                <div class="sm:ml-6 w-full">
                     <x-restaurant-list :restaurants="$restaurants"/>
                 </div>
             </div>

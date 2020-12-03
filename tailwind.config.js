@@ -68,7 +68,7 @@ module.exports = {
     variants: {
         extend: {
             scale: ['active', 'group-hover', 'group-focus'],
-            borderColor: ['checked'],
+            borderColor: [ 'hover', 'checked'],
             backgroundColor: ['checked'],
         }
     },

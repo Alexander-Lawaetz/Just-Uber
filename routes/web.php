@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\CategoryFilterController;
 use App\Http\Controllers\RestaurantQueryController;
+use GuzzleHttp\Client;
+use GuzzleHttp\Promise;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,38 +28,21 @@ Route::get('/', function () {
 
 Route::get('/area/{postcode}', function ($postcode) {
 // TODO Implenent database queries
-    $cuisines = (object) [
-        'title' => 'cuisines',
-        'group' => 'cuisines',
-        'data' => [
-            ['description' => 'american', 'value' => 'american'],
-            ['description' => 'danish', 'value' => 'danish'],
-            ['description' => 'cafe', 'value' => 'cafe'],
-            ['description' => 'cafe', 'value' => 'cafe'],
-            ['description' => 'cafe', 'value' => 'cafe'],
-            ['description' => 'cafe', 'value' => 'cafe'],
-            ['description' => 'cafe', 'value' => 'cafe'],
-            ['description' => 'cafe', 'value' => 'cafe'],
-            ['description' => 'cafe', 'value' => 'cafe'],
-            ['description' => 'cafe', 'value' => 'cafe'],
-            ['description' => 'cafe', 'value' => 'cafe'],
-            ['description' => 'cafe', 'value' => 'cafe'],
-            ['description' => 'danish', 'value' => 'danish'],
+    $client = new Client(['base_uri' => config('app.url')]);
 
-        ]
+    // Initiate each request but do not block
+    $promises = [
+        'refines' => $client->getAsync('filters/categories', [ 'query' => ['group' => 'refines', 'title' => 'filters']]),
+        'cuisines' => $client->getAsync('filters/categories', [ 'query' => ['group' => 'cuisines', 'title' => 'cuisines']]),
     ];
-    $refines = (object) [
-        'title' => 'filters',
-        'group' => 'refines',
-        'data' => [
-            ['description' => 'special offers', 'value' => 'with_discount'],
-            ['description' => 'free delivery', 'value' => 'free_delivery'],
-            ['description' => '5+ stars', 'value' => 'five_star'],
-            ['description' => 'open now', 'value' => 'open_now'],
-            ['description' => 'pick up', 'value' => 'pick_up'],
-            ['description' => 'new', 'value' => 'new'],
-        ],
-    ];
+
+    // Wait for the requests to complete; throws a ConnectException
+    // if any of the requests fail
+    $responses = Promise\Utils::unwrap($promises);
+
+    $cuisines = json_decode($responses['cuisines']->getBody());
+    $refines = json_decode($responses['refines']->getBody());
+
     $restaurants = [
         (object)[
             'name' => 'Crispy House Pizza',
@@ -114,4 +102,6 @@ Route::get('/area/{postcode}', function ($postcode) {
     return view('restaurant-index', ['cuisines' => $cuisines, 'refines' => $refines, 'restaurants' => $restaurants, 'postcode' => $postcode]);
 })->name('restaurants.filter');
 
-Route::post('/area/search-query' , [RestaurantQueryController::class, '__invoke'])->name('restaurants.query');
+Route::get('/filters/categories', [CategoryFilterController::class, '__invoke']);
+
+Route::post('/area/search-query', [RestaurantQueryController::class, '__invoke'])->name('restaurants.query');
