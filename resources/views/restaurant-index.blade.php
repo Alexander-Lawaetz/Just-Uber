@@ -17,10 +17,38 @@
             <div class="flex-none sm:flex">
                 <div>
                     <form id="restaurant-query-filter" action="{{ route('restaurants.filter', ['postcode' => $postcode]) }}" method="get" class="w-64">
-                        <div class="">
-                            <x-restaurant-filter :title="$cuisines->title" :group="$cuisines->group" :list="$cuisines->data" class="mb-4"/>
-                            <x-restaurant-filter :title="$refines->title" :group="$refines->group" :list="$refines->data" />
-                        </div>
+                        <x-sorting-filter>
+                            <x-sorting-filter.header>
+                                <x-icons.just-eat.cuisine-svg class="h-6 w-6 mr-2" />
+                                {{ $cuisines->title }}
+                                <x-slot name="button">
+                                    <button
+                                        id="{{ $cuisines->group }}[]"
+                                        type="button"
+                                        onclick="clearCheckmarks(event)"
+                                        class="text-base text-blue-500 font-bold"
+                                    > Reset
+                                    </button>
+                                </x-slot>
+                            </x-sorting-filter.header>
+                            <x-sorting-filter.filter :list="$cuisines->data" :group="$cuisines->group" class="hidden lg:block"/>
+                        </x-sorting-filter>
+                        <x-sorting-filter>
+                            <x-sorting-filter.header>
+                                <x-icons.just-eat.cuisine-svg class="h-6 w-6 mr-2" />
+                                {{ $refines->title }}
+                                <x-slot name="button">
+                                    <button
+                                        id="{{ $refines->group }}[]"
+                                        type="button"
+                                        onclick="clearCheckmarks(event)"
+                                        class="text-base text-blue-500 font-bold"
+                                    > Reset
+                                    </button>
+                                </x-slot>
+                            </x-sorting-filter.header>
+                            <x-sorting-filter.filter :list="$refines->data" :group="$refines->group" class="hidden lg:block"/>
+                        </x-sorting-filter>
                     </form>
                 </div>
                 <div class="sm:ml-6 w-full">
