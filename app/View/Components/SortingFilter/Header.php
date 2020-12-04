@@ -9,8 +9,6 @@ class Header extends Component
     /**
      * Create a new component instance.
      *
-     * @param string $group
-     * @param string $title
      */
     public function __construct()
     {
