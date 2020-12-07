@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryFilterController;
+use App\Http\Controllers\RestaurantMenuController;
 use App\Http\Controllers\RestaurantQueryController;
 use GuzzleHttp\Client;
 use GuzzleHttp\Promise;
@@ -101,6 +102,8 @@ Route::get('/area/{postcode}', function ($postcode) {
 
     return view('restaurant-index', ['cuisines' => $cuisines, 'refines' => $refines, 'restaurants' => $restaurants, 'postcode' => $postcode]);
 })->name('restaurants.filter');
+
+Route::get( '/restaurants-{identifier}', [RestaurantMenuController::class, '__invoke']);
 
 Route::get('/filters/categories', [CategoryFilterController::class, '__invoke']);
 
