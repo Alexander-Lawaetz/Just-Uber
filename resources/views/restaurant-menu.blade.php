@@ -3,8 +3,8 @@
 @section('title', 'Food delivery & Take-away | Just Uber')
 
 @section('navbar')
-    <div class="z-10 fixed top-0 h-16 w-full bg-light-secondary dark:bg-dark-primary">
-        <x-header class="text-light-important dark:text-dark-important" />
+    <div class="fixed z-50 top-0 h-16 w-full ">
+        <x-header class="text-light-important dark:text-dark-important bg-light-secondary dark:bg-dark-primary" />
     </div>
 @endsection
 
@@ -18,7 +18,7 @@
     </div>
     <div class="pt-72">
         <div class="bg-light-secondary dark:bg-dark-primary">
-            <div class="container px-4 sm:px-8 mx-auto">
+            <div class="container px-4 sm:px-8 mx-auto pb-4">
                 <div class="flex flex-col items-center md:flex-row md:items-start">
                     <img class="-mt-7 h-14 w-14 md:mt-7 md:h-20 md:w-20 border border-dark-primary" src="{{ asset('storage/crispy-house-pizza.gif') }}" />
                     <div class="p-4 flex flex-col xl:flex-row xl:justify-between xl:items-center w-full">
@@ -60,7 +60,93 @@
                         </div>
                     </div>
                 </div>
-                
+                <div>
+                    <section>
+                        <div class="flex justify-around w-full">
+                            <button id="tab-header:tab-menu" class="px-6 py-4 text-xl font-bold block">Menu</button>
+                            <button id="tab-header:tab-ratings" class="px-6 py-4 text-xl font-bold block">Ratings</button>
+                            <button id="tab-header:tab-info" class="px-6 py-4 text-xl font-bold block">Info</button>
+                        </div>
+                        <div class="dark:bg-dark-secondary">
+                            <div id="tab-menu">
+                                <div class="p-4 divide-y divide-gray-200 divide-solid">
+                                    <div>
+                                        <div class="flex justify-between items-center p-4 sticky z-10 top-16 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
+                                            <h2 class="text-xl leading-5 tracking-wide font-bold">Drinks</h2>
+                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
+                                        </div>
+                                        <div class="px-4 divide-y divide-gray-200 divide-dotted">
+                                            <div class="py-4">
+                                                <div class="block cursor-pointer">
+                                                    <div class="inline-block">
+                                                        <p class="capitalize font-bold z-0">Soda 0.33 L</p>
+                                                        <p>Coco cola</p>
+                                                    </div>
+                                                    <div class="flex items-center float-right">
+                                                        <span class="p-2">18,00 kr</span>
+                                                        <button class="p-2 dark:bg-dark-important">
+                                                            <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="py-4">
+                                                <div class="block cursor-pointer">
+                                                    <div class="inline-block">
+                                                        <p class="capitalize font-bold">Soda 0.33 L</p>
+                                                        <p>Coco cola</p>
+                                                    </div>
+                                                    <div class="flex items-center float-right">
+                                                        <span class="p-2">18,00 kr</span>
+                                                        <button class="p-2 dark:bg-dark-important">
+                                                            <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between items-center p-4 sticky sticky top-16 z-10 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
+                                            <h2 class="text-xl leading-5 tracking-wide font-bold">Drinks</h2>
+                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
+                                        </div>
+                                        <div class="px-4 divide-y divide-gray-200 divide-dotted">
+                                            <div class="py-4">
+                                                <div class="block cursor-pointer">
+                                                    <div class="inline-block">
+                                                        <p class="capitalize font-bold">Soda 0.33 L</p>
+                                                        <p>Coco cola</p>
+                                                    </div>
+                                                    <div class="flex items-center float-right">
+                                                        <span class="p-2">18,00 kr</span>
+                                                        <button class="p-2 dark:bg-dark-important">
+                                                            <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="py-4">
+                                                <div class="block cursor-pointer">
+                                                    <div class="inline-block">
+                                                        <p class="capitalize font-bold">Soda 0.33 L</p>
+                                                        <p>Coco cola</p>
+                                                    </div>
+                                                    <div class="flex items-center float-right">
+                                                        <span class="p-2">18,00 kr</span>
+                                                        <button class="p-2 dark:bg-dark-important">
+                                                            <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
