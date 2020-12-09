@@ -1,5 +1,5 @@
-<header class="container px-4 mx-auto">
-    <div {{ $attributes->merge(['class' => 'flex justify-between items-center w-full p-2 container px-4 mx-auto h-16']) }}>
+<header {{ $attributes->merge(['class' => 'w-full px-4 mx-auto']) }}>
+    <div class="flex justify-between items-center w-full p-2 container px-4 mx-auto h-16">
         <div>
             <a href="{{ url('/') }}">
                 <x-icons.just-eat.logo-svg />
