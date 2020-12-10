@@ -17,7 +17,7 @@
         </picture>
     </div>
     <div class="pt-72">
-        <div class="bg-light-secondary dark:bg-dark-primary">
+        <div class="bg-light-primary dark:bg-dark-primary">
             <div class="container px-4 sm:px-8 mx-auto pb-4">
                 <div class="flex flex-col items-center md:flex-row md:items-start">
                     <img class="-mt-7 h-14 w-14 md:mt-7 md:h-20 md:w-20 border border-dark-primary" src="{{ asset('storage/crispy-house-pizza.gif') }}" />
@@ -60,19 +60,33 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <section>
+                <div class="grid grid-cols-5 gap-4">
+                    {{-- Category section --}}
+                    <section class="hidden md:block">
+                        <div class="sticky top-16">
+                            <h2 class="px-6 py-4 text-xl font-bold block">Categories</h2>
+                            <div id="#menu-navigation" class="relative bg-light-secondary dark:bg-dark-secondary">
+                                <div class="absolute h-4 w-4 bg-light-secondary dark:bg-dark-secondary top-0 transform rotate-45 ml-2 -mt-2"></div>
+                                <ul class="p-2">
+                                    <li><a id="navigation-link:drinks" href="#drinks" class="navigation-link block w-full p-2 my-1 hover:underline">Drinks</a></li>
+                                    <li><a id="navigation-link:food" href="#food" class="navigation-link block w-full p-2 my-1 hover:underline">Food</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    {{-- Menu section --}}
+                    <section class="col-span-full md:col-span-4 lg:col-span-3">
                         <div class="flex justify-around w-full">
                             <button id="tab-header:tab-menu" class="px-6 py-4 text-xl font-bold block">Menu</button>
                             <button id="tab-header:tab-ratings" class="px-6 py-4 text-xl font-bold block">Ratings</button>
                             <button id="tab-header:tab-info" class="px-6 py-4 text-xl font-bold block">Info</button>
                         </div>
-                        <div class="dark:bg-dark-secondary">
+                        <div class="bg-light-secondary dark:bg-dark-secondary">
                             <div id="tab-menu">
                                 <div class="p-4 divide-y divide-gray-200 divide-solid">
                                     <div>
                                         <div class="flex justify-between items-center p-4 sticky z-10 top-16 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
-                                            <h2 class="text-xl leading-5 tracking-wide font-bold">Drinks</h2>
+                                            <h2 id="drinks" class="navigation-header text-xl leading-5 tracking-wide font-bold">Drinks</h2>
                                             <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
@@ -84,7 +98,7 @@
                                                     </div>
                                                     <div class="flex items-center float-right">
                                                         <span class="p-2">18,00 kr</span>
-                                                        <button class="p-2 dark:bg-dark-important">
+                                                        <button class="p-2 bg-light-important dark:bg-dark-important">
                                                             <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                                                         </button>
                                                     </div>
@@ -98,7 +112,7 @@
                                                     </div>
                                                     <div class="flex items-center float-right">
                                                         <span class="p-2">18,00 kr</span>
-                                                        <button class="p-2 dark:bg-dark-important">
+                                                        <button class="p-2 bg-light-important dark:bg-dark-important">
                                                             <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                                                         </button>
                                                     </div>
@@ -107,8 +121,8 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="flex justify-between items-center p-4 sticky sticky top-16 z-10 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
-                                            <h2 class="text-xl leading-5 tracking-wide font-bold">Drinks</h2>
+                                        <div class="flex justify-between items-center p-4 sticky top-16 z-10 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
+                                            <h2 id="Food"  class="navigation-header text-xl leading-5 tracking-wide font-bold">Food</h2>
                                             <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
@@ -120,7 +134,7 @@
                                                     </div>
                                                     <div class="flex items-center float-right">
                                                         <span class="p-2">18,00 kr</span>
-                                                        <button class="p-2 dark:bg-dark-important">
+                                                        <button class="p-2 bg-light-important dark:bg-dark-important">
                                                             <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                                                         </button>
                                                     </div>
@@ -134,7 +148,7 @@
                                                     </div>
                                                     <div class="flex items-center float-right">
                                                         <span class="p-2">18,00 kr</span>
-                                                        <button class="p-2 dark:bg-dark-important">
+                                                        <button class="p-2 bg-light-important dark:bg-dark-important">
                                                             <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                                                         </button>
                                                     </div>
@@ -143,6 +157,18 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </section>
+                    {{-- Order section --}}
+                    <section class="hidden lg:block">
+                        <div class="sticky top-16">
+                            <h2 class="px-6 py-4 text-xl font-bold block">Your order</h2>
+                            <div class="relative bg-light-secondary dark:bg-dark-secondary">
+                                <div class="absolute h-4 w-4 bg-light-secondary dark:bg-dark-secondary top-0 transform rotate-45 ml-2 -mt-2"></div>
+                                <ul class="p-2">
+                                    <li><a href="#" class="block w-full p-2 my-1 hover:underline">Drinks</a></li>
+                                </ul>
                             </div>
                         </div>
                     </section>
