@@ -68,7 +68,7 @@
                             <div id="#menu-navigation" class="relative bg-light-secondary dark:bg-dark-secondary">
                                 <div class="absolute h-4 w-4 bg-light-secondary dark:bg-dark-secondary top-0 transform rotate-45 ml-2 -mt-2"></div>
                                 <ul class="p-2">
-                                    <li><a id="navigation-link:drinks" href="#drinks" class="navigation-link block w-full p-2 my-1 capitalize hover:underline">Drinks</a></li>
+                                    <li><a id="navigation-link:drinks" href="#drinks" class="navigation-link block w-full p-2 my-1 capitalize hover:underline font-extrabold text-light-important dark:text-dark-important">Drinks</a></li>
                                     <li><a id="navigation-link:food" href="#food" class="navigation-link block w-full p-2 my-1 capitalize hover:underline">Food</a></li>
                                     <li><a id="navigation-link:panini" href="#panini" class="navigation-link block w-full p-2 my-1 capitalize hover:underline">Panini</a></li>
                                     <li><a id="navigation-link:burger" href="#burger" class="navigation-link block w-full p-2 my-1 capitalize hover:underline">Burger</a></li>
@@ -87,13 +87,13 @@
                         <div class="bg-light-secondary dark:bg-dark-secondary">
                             <div id="tab-menu">
                                 <div class="p-4 divide-y divide-gray-200 divide-solid">
-                                    <div class="navigation-element">
-                                        <div class="navigation-header flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
-                                            <h2 id="drinks" class="navigation-header text-xl leading-5 tracking-wide font-bold">Drinks</h2>
+                                    <section id="drinks" class="navigation-menu">
+                                        <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
+                                            <h2 class="navigation-header text-xl leading-5 tracking-wide font-bold">Drinks</h2>
                                             <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
                                         </div>
-                                        <div class="navigation-element px-4 divide-y divide-gray-200 divide-dotted">
-                                            <div class="navigation-element py-4">
+                                        <div class="px-4 divide-y divide-gray-200 divide-dotted">
+                                            <div class="py-4">
                                                 <div class="block cursor-pointer">
                                                     <div class="inline-block">
                                                         <p class="capitalize font-bold z-0">Soda 0.33 L</p>
@@ -107,7 +107,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="navigation-element py-4">
+                                            <div class="py-4">
                                                 <div class="block cursor-pointer">
                                                     <div class="inline-block">
                                                         <p class="capitalize font-bold">Soda 0.33 L</p>
@@ -122,10 +122,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div>
+                                    </section>
+                                    <section id="food" class="navigation-menu">
                                         <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
-                                            <h2 id="food"  class="navigation-header text-xl leading-5 tracking-wide font-bold">Food</h2>
+                                            <h2 class="navigation-header text-xl leading-5 tracking-wide font-bold">Food</h2>
                                             <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
@@ -158,10 +158,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div>
+                                    </section>
+                                    <section id="panini" class="navigation-menu">
                                         <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
-                                            <h2 id="panini"  class="navigation-header text-xl leading-5 tracking-wide font-bold">Panini</h2>
+                                            <h2 class="navigation-header text-xl leading-5 tracking-wide font-bold">Panini</h2>
                                             <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
@@ -194,10 +194,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div>
+                                    </section>
+                                    <section id="burger" class="navigation-menu">
                                         <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
-                                            <h2 id="burger"  class="navigation-header text-xl leading-5 tracking-wide font-bold">Burger</h2>
+                                            <h2 class="navigation-header text-xl leading-5 tracking-wide font-bold">Burger</h2>
                                             <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
@@ -230,10 +230,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div>
+                                    </section>
+                                    <section id="pizza" class="navigation-menu">
                                         <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
-                                            <h2 id="pizza"  class="navigation-header text-xl leading-5 tracking-wide font-bold">Pizza</h2>
+                                            <h2 class="navigation-header text-xl leading-5 tracking-wide font-bold">Pizza</h2>
                                             <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
@@ -266,7 +266,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </section>
                                 </div>
                             </div>
                         </div>
@@ -298,8 +298,43 @@
 
 @push('styles')
     <style>
-        .navigation-header, navigation-element {
-            scroll-margin-top: 6rem;
+        .navigation-menu {
+            scroll-margin-top: 4rem;
         }
     </style>
+@endpush
+
+@push('scripts')
+    <script>
+        let throttle = false;
+        let navigationLinks = document.querySelectorAll(".navigation-link");
+
+        window.addEventListener("scroll", function (e) {
+            if (throttle) return;
+
+            throttle = true;
+
+            let fromTop = window.scrollY;
+
+            navigationLinks.forEach((link, index, array) => {
+                let section = document.querySelector(link.hash);
+
+                let highlighter = ['font-extrabold', 'text-light-important', 'dark:text-dark-important'];
+
+                if (
+                    (section.offsetTop <= fromTop + 64 || index == 0) &&
+                    section.offsetTop + section.offsetHeight > fromTop + 64
+                ) {
+                    highlighter.forEach(style => {
+                        link.classList.add(style);
+                    })
+                } else {
+                    highlighter.forEach(style => {
+                        link.classList.remove(style);
+                    })
+                }
+            });
+            setTimeout( function() { throttle = false; }, 100)
+        })
+    </script>
 @endpush
