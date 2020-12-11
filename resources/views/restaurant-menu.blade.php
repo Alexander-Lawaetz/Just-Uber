@@ -68,15 +68,18 @@
                             <div id="#menu-navigation" class="relative bg-light-secondary dark:bg-dark-secondary">
                                 <div class="absolute h-4 w-4 bg-light-secondary dark:bg-dark-secondary top-0 transform rotate-45 ml-2 -mt-2"></div>
                                 <ul class="p-2">
-                                    <li><a id="navigation-link:drinks" href="#drinks" class="navigation-link block w-full p-2 my-1 hover:underline">Drinks</a></li>
-                                    <li><a id="navigation-link:food" href="#food" class="navigation-link block w-full p-2 my-1 hover:underline">Food</a></li>
+                                    <li><a id="navigation-link:drinks" href="#drinks" class="navigation-link block w-full p-2 my-1 capitalize hover:underline">Drinks</a></li>
+                                    <li><a id="navigation-link:food" href="#food" class="navigation-link block w-full p-2 my-1 capitalize hover:underline">Food</a></li>
+                                    <li><a id="navigation-link:panini" href="#panini" class="navigation-link block w-full p-2 my-1 capitalize hover:underline">Panini</a></li>
+                                    <li><a id="navigation-link:burger" href="#burger" class="navigation-link block w-full p-2 my-1 capitalize hover:underline">Burger</a></li>
+                                    <li><a id="navigation-link:pizza" href="#pizza" class="navigation-link block w-full p-2 my-1 capitalize hover:underline">Pizza</a></li>
                                 </ul>
                             </div>
                         </div>
                     </section>
                     {{-- Menu section --}}
-                    <section class="col-span-full md:col-span-4 lg:col-span-3">
-                        <div class="flex justify-around w-full">
+                    <section class="col-span-full md:col-span-4 xl:col-span-3">
+                        <div class="flex justify-start w-full">
                             <button id="tab-header:tab-menu" class="px-6 py-4 text-xl font-bold block">Menu</button>
                             <button id="tab-header:tab-ratings" class="px-6 py-4 text-xl font-bold block">Ratings</button>
                             <button id="tab-header:tab-info" class="px-6 py-4 text-xl font-bold block">Info</button>
@@ -84,16 +87,52 @@
                         <div class="bg-light-secondary dark:bg-dark-secondary">
                             <div id="tab-menu">
                                 <div class="p-4 divide-y divide-gray-200 divide-solid">
-                                    <div>
-                                        <div class="flex justify-between items-center p-4 sticky z-10 top-16 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
+                                    <div class="navigation-element">
+                                        <div class="navigation-header flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
                                             <h2 id="drinks" class="navigation-header text-xl leading-5 tracking-wide font-bold">Drinks</h2>
+                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
+                                        </div>
+                                        <div class="navigation-element px-4 divide-y divide-gray-200 divide-dotted">
+                                            <div class="navigation-element py-4">
+                                                <div class="block cursor-pointer">
+                                                    <div class="inline-block">
+                                                        <p class="capitalize font-bold z-0">Soda 0.33 L</p>
+                                                        <p>Coco cola</p>
+                                                    </div>
+                                                    <div class="flex items-center float-right">
+                                                        <span class="p-2">18,00 kr</span>
+                                                        <button class="p-2 bg-light-important dark:bg-dark-important">
+                                                            <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="navigation-element py-4">
+                                                <div class="block cursor-pointer">
+                                                    <div class="inline-block">
+                                                        <p class="capitalize font-bold">Soda 0.33 L</p>
+                                                        <p>Coco cola</p>
+                                                    </div>
+                                                    <div class="flex items-center float-right">
+                                                        <span class="p-2">18,00 kr</span>
+                                                        <button class="p-2 bg-light-important dark:bg-dark-important">
+                                                            <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
+                                            <h2 id="food"  class="navigation-header text-xl leading-5 tracking-wide font-bold">Food</h2>
                                             <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
                                             <div class="py-4">
                                                 <div class="block cursor-pointer">
                                                     <div class="inline-block">
-                                                        <p class="capitalize font-bold z-0">Soda 0.33 L</p>
+                                                        <p class="capitalize font-bold">Soda 0.33 L</p>
                                                         <p>Coco cola</p>
                                                     </div>
                                                     <div class="flex items-center float-right">
@@ -121,8 +160,80 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="flex justify-between items-center p-4 sticky top-16 z-10 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
-                                            <h2 id="Food"  class="navigation-header text-xl leading-5 tracking-wide font-bold">Food</h2>
+                                        <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
+                                            <h2 id="panini"  class="navigation-header text-xl leading-5 tracking-wide font-bold">Panini</h2>
+                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
+                                        </div>
+                                        <div class="px-4 divide-y divide-gray-200 divide-dotted">
+                                            <div class="py-4">
+                                                <div class="block cursor-pointer">
+                                                    <div class="inline-block">
+                                                        <p class="capitalize font-bold">Soda 0.33 L</p>
+                                                        <p>Coco cola</p>
+                                                    </div>
+                                                    <div class="flex items-center float-right">
+                                                        <span class="p-2">18,00 kr</span>
+                                                        <button class="p-2 bg-light-important dark:bg-dark-important">
+                                                            <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="py-4">
+                                                <div class="block cursor-pointer">
+                                                    <div class="inline-block">
+                                                        <p class="capitalize font-bold">Soda 0.33 L</p>
+                                                        <p>Coco cola</p>
+                                                    </div>
+                                                    <div class="flex items-center float-right">
+                                                        <span class="p-2">18,00 kr</span>
+                                                        <button class="p-2 bg-light-important dark:bg-dark-important">
+                                                            <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
+                                            <h2 id="burger"  class="navigation-header text-xl leading-5 tracking-wide font-bold">Burger</h2>
+                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
+                                        </div>
+                                        <div class="px-4 divide-y divide-gray-200 divide-dotted">
+                                            <div class="py-4">
+                                                <div class="block cursor-pointer">
+                                                    <div class="inline-block">
+                                                        <p class="capitalize font-bold">Soda 0.33 L</p>
+                                                        <p>Coco cola</p>
+                                                    </div>
+                                                    <div class="flex items-center float-right">
+                                                        <span class="p-2">18,00 kr</span>
+                                                        <button class="p-2 bg-light-important dark:bg-dark-important">
+                                                            <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="py-4">
+                                                <div class="block cursor-pointer">
+                                                    <div class="inline-block">
+                                                        <p class="capitalize font-bold">Soda 0.33 L</p>
+                                                        <p>Coco cola</p>
+                                                    </div>
+                                                    <div class="flex items-center float-right">
+                                                        <span class="p-2">18,00 kr</span>
+                                                        <button class="p-2 bg-light-important dark:bg-dark-important">
+                                                            <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
+                                            <h2 id="pizza"  class="navigation-header text-xl leading-5 tracking-wide font-bold">Pizza</h2>
                                             <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
@@ -161,9 +272,12 @@
                         </div>
                     </section>
                     {{-- Order section --}}
-                    <section class="hidden lg:block">
+                    <section class="hidden xl:block">
                         <div class="sticky top-16">
-                            <h2 class="px-6 py-4 text-xl font-bold block">Your order</h2>
+                            <div class="flex flex-row items-center px-6 py-4">
+                                <x-icons.shopping-cart-svg class="h-6 w-6" />
+                                <h2 class="text-xl font-bold block ml-2">Your order</h2>
+                            </div>
                             <div class="relative bg-light-secondary dark:bg-dark-secondary">
                                 <div class="absolute h-4 w-4 bg-light-secondary dark:bg-dark-secondary top-0 transform rotate-45 ml-2 -mt-2"></div>
                                 <ul class="p-2">
@@ -181,3 +295,11 @@
 @section('footer')
     <x-footer />
 @endsection
+
+@push('styles')
+    <style>
+        .navigation-header, navigation-element {
+            scroll-margin-top: 6rem;
+        }
+    </style>
+@endpush
