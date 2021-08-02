@@ -26,15 +26,16 @@
                     <input class="border-2 border-gray-900" id="remember" type="checkbox" name="remember">
                     <label for="remember">Remember me</label><br>
                 </div>
-                <div clas="w-auto">
+                <div class="w-auto">
                     <input class="w-full p-3 my-3 text-light-primary bg-light-important dark:bg-dark-important border-2 border-gray-900" type="submit" value="Login">
                 </div>
-            </form>
+           S </form>
             <!-- Social media -->
-            <a href="{{ route('password.request') }}" class="text-sm">Forgot password?</a>
-            <nav class="text-sm">
+            <a href="{{ route('password.request') }}"   class="text-sm text-light-important dark:text-dark-important">Forgot password?</a><br>
+            <a href="{{ route('register') }}"           class="text-sm text-light-important dark:text-dark-important">Register account?</a>
+            <nav class="text-sm mt-2">
                 <a href="#">Terms of use.</a>
-                <a href="#">Privacy policy</a>
+                <a class="ml-2" href="#">Privacy policy</a>
             </nav>
         </div>
     </div>
