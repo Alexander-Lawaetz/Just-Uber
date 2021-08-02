@@ -29,7 +29,7 @@
                 <div class="w-auto">
                     <input class="w-full p-3 my-3 text-light-primary bg-light-important dark:bg-dark-important border-2 border-gray-900" type="submit" value="Login">
                 </div>
-           S </form>
+            </form>
             <!-- Social media -->
             <a href="{{ route('password.request') }}"   class="text-sm text-light-important dark:text-dark-important">Forgot password?</a><br>
             <a href="{{ route('register') }}"           class="text-sm text-light-important dark:text-dark-important">Register account?</a>
