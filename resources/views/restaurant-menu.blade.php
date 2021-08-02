@@ -4,7 +4,7 @@
 
 @section('navbar')
     <div class="fixed z-50 top-0 h-16 w-full ">
-        <x-header class="text-light-important dark:text-dark-important bg-light-secondary dark:bg-dark-primary" />
+        <x-header class="text-light-important dark:text-dark-important bg-light-secondary dark:bg-dark-primary"></x-header>
     </div>
 @endsection
 
@@ -20,13 +20,13 @@
         <div class="bg-light-primary dark:bg-dark-primary">
             <div class="container px-4 sm:px-8 mx-auto pb-4">
                 <div class="flex flex-col items-center md:flex-row md:items-start">
-                    <img class="-mt-7 h-14 w-14 md:mt-7 md:h-20 md:w-20 border border-dark-primary" src="{{ asset('storage/crispy-house-pizza.gif') }}" />
+                    <img class="-mt-7 h-14 w-14 md:mt-7 md:h-20 md:w-20 border border-dark-primary" src="{{ asset('storage/crispy-house-pizza.gif') }}" alt="Restaurant Icon"/>
                     <div class="p-4 flex flex-col xl:flex-row xl:justify-between xl:items-center w-full">
                         <div class="text-center md:text-left">
                             <h2 class="pb-1 text-2xl tracking-wide">{{ $restaurant->name }}</h2>
                             <div class="flex items-center justify-center md:justify-start p-1">
                                 @for($i = 0; $i < 6; $i++)
-                                    <x-icons.star-solid-svg class="h-4 w-4 {{ $i <= round($restaurant->reputation->avg_stars) ? 'text-light-important dark:text-dark-important' : 'text-gray-400'}}" />
+                                    <x-icons.star-solid-svg class="h-4 w-4 {{ $i <= round($restaurant->reputation->avg_stars) ? 'text-light-important dark:text-dark-important' : 'text-gray-400'}}"></x-icons.star-solid-svg>
                                 @endfor
                                 <span class="ml-2 text-sm font-bold">({{ $restaurant->reputation->ratings . ' Ratings'}})</span>
                             </div>
@@ -36,10 +36,10 @@
                             {{-- TODO add address field --}}
                             <div class="flex items-center mb-1">
                                 @if(empty($restaurant->details->take_away))
-                                    <x-icons.just-eat.self-pickup-svg class="h-6 w-6" />
+                                    <x-icons.just-eat.self-pickup-svg class="h-6 w-6"></x-icons.just-eat.self-pickup-svg>
                                     <p class="ml-2">Only self pickup</p>
                                 @else
-                                    <x-icons.just-eat.money-svg class="h-6 w-6" />
+                                    <x-icons.just-eat.money-svg class="h-6 w-6"></x-icons.just-eat.money-svg>
                                     {{-- TODO fix shorten this statement --}}
                                     <p class="ml-2">
                                         Delivery {{ !empty($restaurant->details->take_away->deliver_fee) ? $restaurant->details->take_away->deliver_fee . ' ' . $restaurant->details->take_away->currency_sign . '.' : 'FREE' }}
@@ -49,11 +49,11 @@
                             </div>
                             <div class="flex justify-around md:justify-between md:w-44 xl:ml-10">
                                 <div class="flex items-center">
-                                    <x-icons.just-eat.recieve-cash-payment-svg class="h-7 w-7"/>
+                                    <x-icons.just-eat.recieve-cash-payment-svg class="h-7 w-7"></x-icons.just-eat.recieve-cash-payment-svg>
                                     <span class="ml-2">Cash</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <x-icons.just-eat.recieve-card-payment-svg class="h-7 w-7"/>
+                                    <x-icons.just-eat.recieve-card-payment-svg class="h-7 w-7"></x-icons.just-eat.recieve-card-payment-svg>
                                     <span class="ml-2">Card</span>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                                     <section id="drinks" class="navigation-menu">
                                         <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
                                             <h2 class="navigation-header text-xl leading-5 tracking-wide font-bold">Drinks</h2>
-                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
+                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"></x-icons.chevron-down-outline-svg>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
                                             <div class="py-4">
@@ -126,7 +126,7 @@
                                     <section id="food" class="navigation-menu">
                                         <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
                                             <h2 class="navigation-header text-xl leading-5 tracking-wide font-bold">Food</h2>
-                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
+                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"></x-icons.chevron-down-outline-svg>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
                                             <div class="py-4">
@@ -162,7 +162,7 @@
                                     <section id="panini" class="navigation-menu">
                                         <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
                                             <h2 class="navigation-header text-xl leading-5 tracking-wide font-bold">Panini</h2>
-                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
+                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"></x-icons.chevron-down-outline-svg>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
                                             <div class="py-4">
@@ -198,7 +198,7 @@
                                     <section id="burger" class="navigation-menu">
                                         <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
                                             <h2 class="navigation-header text-xl leading-5 tracking-wide font-bold">Burger</h2>
-                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
+                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"></x-icons.chevron-down-outline-svg>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
                                             <div class="py-4">
@@ -234,7 +234,7 @@
                                     <section id="pizza" class="navigation-menu">
                                         <div class="flex justify-between items-center p-4 bg-light-secondary dark:bg-dark-secondary cursor-pointer">
                                             <h2 class="navigation-header text-xl leading-5 tracking-wide font-bold">Pizza</h2>
-                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"/>
+                                            <x-icons.chevron-down-outline-svg class="h-6 w-6"></x-icons.chevron-down-outline-svg>
                                         </div>
                                         <div class="px-4 divide-y divide-gray-200 divide-dotted">
                                             <div class="py-4">
@@ -275,7 +275,7 @@
                     <section class="hidden xl:block">
                         <div class="sticky top-16">
                             <div class="flex flex-row items-center px-6 py-4">
-                                <x-icons.shopping-cart-svg class="h-6 w-6" />
+                                <x-icons.shopping-cart-svg class="h-6 w-6"></x-icons.shopping-cart-svg>
                                 <h2 class="text-xl font-bold block ml-2">Your order</h2>
                             </div>
                             <div class="relative bg-light-secondary dark:bg-dark-secondary">
@@ -293,7 +293,7 @@
 @endsection
 
 @section('footer')
-    <x-footer />
+    <x-footer></x-footer>
 @endsection
 
 @push('styles')
@@ -309,7 +309,7 @@
         let throttle = false;
         let navigationLinks = document.querySelectorAll(".navigation-link");
 
-        window.addEventListener("scroll", function (e) {
+        window.addEventListener("scroll", function () {
             if (throttle) return;
 
             throttle = true;
@@ -334,7 +334,7 @@
                     })
                 }
             });
-            setTimeout( function() { throttle = false; }, 100)
+            setTimeout( function() { throttle = false; }, 25)
         })
     </script>
 @endpush
