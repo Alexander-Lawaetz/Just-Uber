@@ -13,12 +13,21 @@
                     <span class="ml-1">For you</span>
                 </a>
                 @auth
-                    <div id="hover:6911dfb7-8940-42ba-8a3f-f25f24b69ddf" class="relative group flex flex-row items-end">
-                        <button class="flex flex-row items-center ml-6 hover:underline">
+                    <div x-data="{ open: false }" class="relative group flex flex-row items-end">
+                        <button  @click="open = !open" class="flex flex-row items-center ml-6 hover:underline">
                             <x-icons.user-circle-solid-svg class="h-6" />
                             <span class="ml-1">{{ Auth::user()->name }}</span>
                         </button>
-                        <div id="6911dfb7-8940-42ba-8a3f-f25f24b69ddf" class="absolute transform transition-transform duration-300 origin-top-right scale-0 group-hover:scale-100 z-10 top-0 right-0 pt-4 mt-6">
+                        <!--suppress XmlUnboundNsPrefix -->
+                        <div
+                            x-show="open"
+                            x-transition:enter="transition ease-out origin-top-right duration-300"
+                            x-transition:enter-start="opacity-0 transform scale-0"
+                            x-transition:enter-end="opacity-100 transform scale-100"
+                            x-transition:leave="transition ease-in duration-300"
+                            x-transition:leave-start="opacity-100 transform scale-100"
+                            x-transition:leave-end="opacity-0 origin-top-right transform scale-0"
+                            class="absolute z-10 top-0 right-0 pt-4 mt-6">
                             <div class="relative px-6 whitespace-nowrap bg-light-primary shadow-md text-light-primary dark:bg-dark-primary dark:text-dark-primary">
                                 <a class="block px-4 py-2 border-t-0 border-light-primary-third dark:border-dark-secondary cursor-not-allowed">Your account</a>
                                 <a class="block px-4 py-2 border-t border-light-primary-third dark:border-dark-secondary cursor-not-allowed">Your orders</a>
@@ -46,22 +55,3 @@
         @endif
     </div>
 </header>
-
-@push('scripts')
-    <script>
-
-        /* Touch simulation support / Click event */
-        let profileDropdown = document.getElementById('hover:6911dfb7-8940-42ba-8a3f-f25f24b69ddf');
-
-        profileDropdown.addEventListener('focusin', event => {
-            let id = event.target.id.split(':')[1] || event.target.parentElement.id.split(':')[1];
-
-            document.getElementById(id).classList.add('scale-100');
-        });
-        profileDropdown.addEventListener('focusout', event => {
-            let id = event.target.id.split(':')[1] || event.target.parentElement.id.split(':')[1];
-
-            document.getElementById(id).classList.remove('scale-100');
-        });
-    </script>
-@endpush
