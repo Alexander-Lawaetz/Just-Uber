@@ -2,12 +2,15 @@
     <div class="bg-light-third dark:bg-dark-secondary">
         <div class="container mx-auto">
             <div class="flex flex-col sm:flex-row">
-                <div class="relative flex-grow pt-4 sm:py-8  px-4 sm:px-8 border-b sm:border-none">
-                    <h2 id="footer:d6e653d8-2508-4018-8e59-b7d16521411c" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleDropdown(event, 'rotate-180')">Explore cuisines</h2>
-                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
+                <div x-data="{ open: true }" class="relative flex-grow pt-4 sm:py-8  px-4 sm:px-8 border-b sm:border-none">
+                    <h2 @click="open = !open" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text">Explore cuisines</h2>
+                    <span :class="open ? '' : 'rotate-180'" class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
                         <x-icons.chevron-down-outline-svg class="h-6 w-6" />
                     </span>
-                    <div id="d6e653d8-2508-4018-8e59-b7d16521411c" class="hidden sm:block transition-all duration-500 ease-in-out pb-4">
+                    <div
+                        x-cloak
+                        x-show="open"
+                        class="transition-all duration-500 pb-0 ease-in-out pb-4">
                         <ul>
                             <x-list-anchor-item><a class="cursor-not-allowed">Premium & Gourment</a></x-list-anchor-item>
                             <x-list-anchor-item><a class="cursor-not-allowed">Pizza</a></x-list-anchor-item>
@@ -19,12 +22,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 border-b sm:border-none">
-                    <h2  id="footer:b93948da-4784-4b6e-b614-243ca0b8a82a" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleDropdown(event, 'rotate-180')">Find your city</h2>
-                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
+                <div x-data="{ open: true }" class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 border-b sm:border-none">
+                    <h2  @click="open = !open" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text">Find your city</h2>
+                    <span :class="open ? '' : 'rotate-180'" class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
                         <x-icons.chevron-down-outline-svg class="h-6 w-6" />
                     </span>
-                    <div id="b93948da-4784-4b6e-b614-243ca0b8a82a" class="hidden sm:block transition-all duration-500 ease-in-out pb-4">
+                    <div
+                        x-cloak
+                        x-show="open"
+                        class="transition-all duration-500 pb-0 ease-in-out pb-4">
                         <ul>
                             <x-list-anchor-item><a class="cursor-not-allowed">Copenhagen</a></x-list-anchor-item>
                             <x-list-anchor-item><a class="cursor-not-allowed">Roskilde</a></x-list-anchor-item>
@@ -35,12 +41,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 sm:border-none">
-                    <h2 id="footer:de81555d-65d4-4572-93fe-9705f5662118" class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text" onclick="toggleDropdown(event, 'rotate-180')">About us</h2>
-                    <span class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
+                <div x-data="{ open: true }" class="relative flex-grow pt-4 sm:py-8 px-4 sm:px-8 sm:border-none">
+                    <h2
+                        @click="open = !open"
+                        class="text-xl font-semibold mb-4 leading-loose cursor-pointer sm:cursor-text">About us</h2>
+                    <span :class="open ? '' : 'rotate-180'" class="absolute sm:hidden transform right-0 top-0 mt-6 mr-6">
                         <x-icons.chevron-down-outline-svg class="h-6 w-6" />
                     </span>
-                    <div id="de81555d-65d4-4572-93fe-9705f5662118" class="hidden sm:block transition-all duration-500 pb-0 ease-in-out pb-4">
+                    <div
+                        x-cloak
+                        x-show="open"
+                        class="transition-all duration-500 pb-0 ease-in-out pb-4">
                         <ul>
                             <x-list-anchor-item><a class="cursor-not-allowed">Coronavirus</a></x-list-anchor-item>
                             <x-list-anchor-item><a class="cursor-not-allowed">Buy a Giftcard</a></x-list-anchor-item>
@@ -103,41 +114,3 @@
         </div>
     </div>
 </footer>
-
-@push('scripts')
-    <script>
-        function toggleDropdown (event, styling) {
-            <!-- element event, or children event (button) -->
-            let id = event.target.id.split(':')[1] || event.target.parentElement.id.split(':')[1];
-
-            if (styling === undefined) {
-                toggleElementVisibility(id)
-                return
-            }
-            let element = event.target.nextElementSibling;
-
-            toggleElementVisibility(id, toggleElementRotation(element, styling))
-        }
-
-        function toggleElementVisibility (id, callback) {
-            let div = document.getElementById(id);
-            if (div.classList.contains('hidden')) {
-                div.classList.remove('hidden');
-            } else {
-                div.classList.add('hidden');
-            }
-
-            if(typeof callback ==  "function") {
-                callback();
-            }
-        }
-
-        function toggleElementRotation (element, styling) {
-            if(element.classList.contains(styling)) {
-                element.classList.remove(styling);
-            } else {
-                element.classList.add(styling);
-            }
-        }
-    </script>
-@endpush
