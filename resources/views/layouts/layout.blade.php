@@ -20,6 +20,7 @@
         @stack('styles')
         <!-- Scripts -->
         <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+        @livewireStyles
     </head>
     <body class="antialiased min-h-screen bg-light-secondary dark:bg-dark-primary text-light-primary dark:text-dark-primary">
         @yield('navbar')
@@ -30,5 +31,6 @@
         @yield('footer')
 
         @stack('scripts')
+        @livewireScripts
     </body>
 </html>
