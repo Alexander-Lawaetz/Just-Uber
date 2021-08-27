@@ -7,58 +7,7 @@
 @endsection
 
 @section('content')
-    <div class="bg-light-secondary dark:bg-dark-primary p-4">
-        <div class="container px-4 sm:px-8 mb-8 mx-auto">
-            <div class="flex items-baseline mb-4">
-                {{--TODO implement dynamic heading--}}
-                <h2 class="text-2xl ">99 restaurants in {{ $postcode }} Odense V</h2>
-                <a href="{{ '/' }}" class="ml-4 text-blue-500 font-bold">Change location</a>
-            </div>
-            <div class="flex-none lg:flex">
-                <div>
-                    <form id="restaurant-query-filter" action="{{ route('restaurants.filter', ['postcode' => $postcode]) }}" method="get" class="lg:w-64">
-                        <div class="flex flex-row lg:flex-col justify-around w-full">
-                            <x-sorting-filter>
-                                <x-sorting-filter.header class="w-full px-4 py-2 mx-auto cursor-pointer lg:cursor-text">
-                                    <x-icons.just-eat.cuisine-svg class="h-6 w-6 mr-2" />
-                                    {{ $cuisines->title }}
-                                    <x-slot name="button">
-                                        <button
-                                            id="{{ $cuisines->group }}[]"
-                                            type="button"
-                                            onclick="clearCheckmarks(event)"
-                                            class="hidden lg:block text-base text-blue-500 font-bold"
-                                        > Reset
-                                        </button>
-                                    </x-slot>
-                                </x-sorting-filter.header>
-                                <x-sorting-filter.filter :list="$cuisines->data" :group="$cuisines->group" class="hidden lg:block"/>
-                            </x-sorting-filter>
-                            <x-sorting-filter>
-                                <x-sorting-filter.header class="w-full px-4 py-2 mx-auto cursor-pointer lg:cursor-text">
-                                    <x-icons.just-eat.cuisine-svg class="h-6 w-6 mr-2" />
-                                    {{ $refines->title }}
-                                    <x-slot name="button">
-                                        <button
-                                            id="{{ $refines->group }}[]"
-                                            type="button"
-                                            onclick="clearCheckmarks(event)"
-                                            class="hidden lg:block text-base text-blue-500 font-bold"
-                                        > Reset
-                                        </button>
-                                    </x-slot>
-                                </x-sorting-filter.header>
-                                <x-sorting-filter.filter :list="$refines->data" :group="$refines->group" class="hidden lg:block"/>
-                            </x-sorting-filter>
-                        </div>
-                    </form>
-                </div>
-                <div class="lg:ml-6 w-full">
-                    <x-restaurant-list :restaurants="$restaurants"/>
-                </div>
-            </div>
-        </div>
-    </div>
+    @livewire('restaurant-list', ['postcode' => $postcode])
 @endsection
 
 @section('footer')

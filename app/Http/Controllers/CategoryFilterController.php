@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category_filter;
+use App\Models\CategoryFilter;
 use Illuminate\Http\Request;
 
 class CategoryFilterController extends Controller
@@ -18,7 +18,7 @@ class CategoryFilterController extends Controller
         $group = $request->query('group');
         $title = $request->query('title');
 
-        $category_filters = Category_filter::where('group', $group)
+        $category_filters = CategoryFilter::where('group', $group)
             ->orderBy('description', 'asc')
             ->get();
 
