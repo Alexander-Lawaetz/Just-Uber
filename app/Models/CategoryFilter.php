@@ -11,6 +11,7 @@ class CategoryFilter extends Model
 
     protected $hidden = array('id', 'created_at', 'updated_at');
 
+    protected $table = 'category_filters';
     /**
      * Indicates if the model should be timestamped.
      *
