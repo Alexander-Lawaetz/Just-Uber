@@ -22,7 +22,7 @@ class VariantFactory extends Factory
     public function definition()
     {
         return [
-            'tag'   => $this->faker->unique()->text(5),
+            'tag'   => $this->faker->unique()->text(10),
         ];
     }
 }

@@ -28,7 +28,7 @@ class RestaurantFactory extends Factory
             'phone_number'  => $this->faker->unique()->phoneNumber,
             'email'         => $this->faker->unique()->safeEmail,
             'street'        => $this->faker->streetAddress,
-            'address_id'    => Address::all()->random(),
+            'address_id'    => Address::factory()->create()->getKey(),
         ];
     }
 }

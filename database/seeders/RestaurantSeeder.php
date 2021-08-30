@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\CategoryFilter;
 use App\Models\Menu;
 use App\Models\Restaurant;
 use App\Models\Variant;
@@ -22,5 +23,12 @@ class RestaurantSeeder extends Seeder
                 ->has(Menu::factory()->count(5)
                     ->has(Variant::factory()->count(3))))
             ->create();
+
+        $restaurants = Restaurant::all();
+
+        foreach ($restaurants as $restaurant) {
+            $category_filters = CategoryFilter::all()->random(2);
+            $restaurant->categoryfilters()->attach($category_filters);
+        }
     }
 }

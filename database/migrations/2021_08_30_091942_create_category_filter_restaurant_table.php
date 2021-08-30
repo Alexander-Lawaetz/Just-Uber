@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class MakeTagUniqueOnVariantsTable extends Migration
+class CreateCategoryFilterRestaurantTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class MakeTagUniqueOnVariantsTable extends Migration
      */
     public function up()
     {
-        Schema::table('variants', function (Blueprint $table) {
-            $table->dropColumn('tag');
-        });
-
-        Schema::table('variants', function (Blueprint $table) {
-            $table->string('tag')->unique();
+        Schema::create('category_filter_restaurant', function (Blueprint $table) {
+            $table->foreignId('category_filter_id')->constrained();
+            $table->foreignId('restaurant_id')->constrained();
         });
     }
 
@@ -29,8 +26,6 @@ class MakeTagUniqueOnVariantsTable extends Migration
      */
     public function down()
     {
-        Schema::table('variants', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('category_filter_restaurant');
     }
 }
