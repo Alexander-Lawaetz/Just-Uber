@@ -27,7 +27,7 @@ class RestaurantSeeder extends Seeder
         $restaurants = Restaurant::all();
 
         foreach ($restaurants as $restaurant) {
-            $category_filters = CategoryFilter::all()->random(2);
+            $category_filters = CategoryFilter::all()->where('group', '=', 'cuisines')->random(2);
             $restaurant->categoryfilters()->attach($category_filters);
         }
     }

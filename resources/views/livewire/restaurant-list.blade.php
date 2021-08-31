@@ -1,15 +1,4 @@
 <div class="bg-light-secondary dark:bg-dark-primary p-4">
-    <div>
-        @foreach ($cuisines as $cuisine)
-            {{ $cuisine }}
-        @endforeach
-    </div>
-    <div>
-        @foreach ($refines as $refine)
-            {{ $refine }}
-        @endforeach
-    </div>
-
     <div class="container px-4 sm:px-8 mb-8 mx-auto">
         <div class="flex items-baseline mb-4">
             {{--TODO implement dynamic heading--}}
@@ -48,8 +37,8 @@
                                                         <x-icons.star-solid-svg class="h-4 w-4 {{ $i <= round($restaurant->reputation->avg_stars) ? 'text-light-important dark:text-dark-important' : 'text-gray-400'}}"></x-icons.star-solid-svg>
                                                     @endfor
                                                     <span class="ml-2 text-xs">({{ $restaurant->reputation->ratings }})</span>
-                                                </div>
-                                                <p class="text-sm font-bold capitalize">{{ implode(', ', $restaurant->main_dishes) }}</p>--}}
+                                                </div>--}}
+                                                <p class="text-sm font-bold capitalize">{{ $restaurant->categoryfilters->pluck('value')->implode(', ') }}</p>
                                             </div>
                                             <div class="w-full h-full sm:pl-2">
                                                 <div
