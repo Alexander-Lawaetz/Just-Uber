@@ -32,12 +32,12 @@
                                             class="flex flex-col sm:flex-row w-full h-full justify-between sm:divide-x divide-gray-600">
                                             <div class="w-full text-left my-auto">
                                                 <h2 class="pb-1 font-bold">{{ $restaurant->name }}</h2>
-                                                {{--<div class="flex items-center pb-1">
-                                                    @for($i = 0; $i < 6; $i++)
-                                                        <x-icons.star-solid-svg class="h-4 w-4 {{ $i <= round($restaurant->reputation->avg_stars) ? 'text-light-important dark:text-dark-important' : 'text-gray-400'}}"></x-icons.star-solid-svg>
+                                                <div class="flex items-center pb-1">
+                                                    @for($i = 0; $i < 5; $i++)
+                                                        <x-icons.star-solid-svg class="h-4 w-4 {{ $i <= round($restaurant->reviews->avg('avg_review')) ? 'text-light-important dark:text-dark-important' : 'text-gray-400'}}"></x-icons.star-solid-svg>
                                                     @endfor
-                                                    <span class="ml-2 text-xs">({{ $restaurant->reputation->ratings }})</span>
-                                                </div>--}}
+                                                    <span class="ml-2 text-xs">({{ $restaurant->reviews_count }})</span>
+                                                </div>
                                                 <p class="text-sm font-bold capitalize">{{ $restaurant->categoryfilters->pluck('value')->implode(', ') }}</p>
                                             </div>
                                             <div class="w-full h-full sm:pl-2">

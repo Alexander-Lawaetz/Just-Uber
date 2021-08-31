@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Restaurant;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class RestaurantList extends Component
@@ -34,8 +35,13 @@ class RestaurantList extends Component
     public function filterRestaurants() {
         if (!empty($this->cuisines)) {
             return Restaurant::whereHas('categoryfilters', function ($query) {
-                $query->whereIn('value', $this->cuisines);
-            })->with('address')->get();
+                    $query->whereIn('value', $this->cuisines);
+                })
+                ->with(['address', 'reviews' => function ($query) {
+                    $query->select(['*', DB::raw('(food_review + delivery_review) / 2 as avg_review')]);
+                }])
+                ->withCount('reviews')
+                ->get();
         } else {
             return Restaurant::with(['categoryfilters', 'address'])->get();
         }

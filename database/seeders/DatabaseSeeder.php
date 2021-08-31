@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             CategoryFilterSeeder::class,
 //            AddressSeeder::class,
             RestaurantSeeder::class,
+            ReviewSeeder::class,
         ]);
     }
 }
