@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class RestaurantList extends Component
 {
-    public $restaurants;
+    public $restaurants = [];
     public $postcode;
     public $cuisines = [];
     public $refines = [];
@@ -33,18 +33,24 @@ class RestaurantList extends Component
     }
 
     public function filterRestaurants() {
-        if (!empty($this->cuisines)) {
-            return Restaurant::whereHas('categoryfilters', function ($query) {
-                    $query->whereIn('value', $this->cuisines);
-                })
-                ->with(['address', 'reviews' => function ($query) {
+        $query = Restaurant::query();
+
+        $query->when(!empty($this->cuisines), function ($query) {
+            return $query->whereHas('categoryfilters', function ($query) {
+                $query->whereIn('value', $this->cuisines);
+            });
+        });
+
+        $query->when(empty($this->cuisines), function ($query) {
+            return $query->with('categoryfilters');
+        });
+
+        $query->with(['address', 'reviews' => function ($query) {
                     $query->select(['*', DB::raw('(food_review + delivery_review) / 2 as avg_review')]);
                 }])
-                ->withCount('reviews')
-                ->get();
-        } else {
-            return Restaurant::with(['categoryfilters', 'address'])->get();
-        }
+                ->withCount('reviews');
+
+        return $query->get();
     }
 
     public function render()
