@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
 //            AddressSeeder::class,
             RestaurantSeeder::class,
             ReviewSeeder::class,
+//            OpeningHourSeeder::class,
         ]);
     }
 }

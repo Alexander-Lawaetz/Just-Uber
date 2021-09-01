@@ -37,4 +37,8 @@ class Restaurant extends Model
     public function reviews() {
         return $this->hasMany(Review::class);
     }
+
+    public function openinghours() {
+        return $this->hasMany(OpeningHour::class);
+    }
 }

@@ -35,17 +35,17 @@ class RestaurantList extends Component
     public function filterRestaurants() {
         $query = Restaurant::query();
 
-        $query->when(!empty($this->cuisines), function ($query) {
+        $query->when((!empty($this->cuisines) || !empty($this->refines)), function ($query) {
             return $query->whereHas('categoryfilters', function ($query) {
-                $query->whereIn('value', $this->cuisines);
+                $query->whereIn('value', $this->cuisines)->orWhereIn('value', $this->refines);
             });
         });
 
-        $query->when(empty($this->cuisines), function ($query) {
+        $query->when((empty($this->cuisines) && empty($this->refines)), function ($query) {
             return $query->with('categoryfilters');
         });
 
-        $query->with(['address', 'reviews' => function ($query) {
+        $query->with(['address', 'openinghours', 'reviews' => function ($query) {
                     $query->select(['*', DB::raw('(food_review + delivery_review) / 2 as avg_review')]);
                 }])
                 ->withCount('reviews');
