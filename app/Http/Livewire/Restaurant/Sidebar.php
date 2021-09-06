@@ -19,7 +19,7 @@ class Sidebar extends Component
         CategoryFilter::all()->mapToGroups(function ($item, $key) {
             return [$item['group'] => $item];
         })->each(function ($item, $key) {
-            $this->{$key . 'Collection'} = $item;
+            $this->{$key . 'Collection'} = $item->sortBy('value');
         });
     }
 

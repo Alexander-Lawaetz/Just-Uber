@@ -36,11 +36,9 @@ class RestaurantList extends Component
 
         $query->when((!empty($this->cuisines) || !empty($this->refines)), function ($query) {
             return $query->whereHas('categoryfilters', function ($query) {
-                $query->whereIn('value', $this->cuisines)->orWhereIn('value', $this->refines);
+                $query->whereIn('value', array_merge($this->cuisines, $this->refines));
             });
-        });
-
-        $query->when((empty($this->cuisines) && empty($this->refines)), function ($query) {
+        }, function ($query) {
             return $query->with('categoryfilters');
         });
 
