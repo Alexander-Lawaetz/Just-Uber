@@ -25,4 +25,8 @@ class OpeningHour extends Model
         'validThrough',
     ];
 
+    public function getDayOfWeekOpeningHoursAttribute()
+    {
+        return $this->opens->format('H:i') .' - '. $this->closes->format('H:i');
+    }
 }

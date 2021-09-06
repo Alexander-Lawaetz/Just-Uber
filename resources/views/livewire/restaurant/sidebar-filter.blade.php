@@ -1,15 +1,13 @@
 <div>
-    <div
-        class="flex justify-between mb-4 min-w-full w-full px-2 py-2 mx-auto cursor-pointer lg:cursor-text text-xl my-1 font-light"
-        }}>
+    <div class="flex justify-between mb-4 min-w-full w-full px-2 py-2 mx-auto cursor-pointer lg:cursor-text text-xl my-1 font-light">
         <h2 class="flex capitalize">
             <x-icons.just-eat.cuisine-svg class="h-6 w-6 mr-2"/>
-            {{ $collection[1]->description }}
+            {{ $group }}
         </h2>
         <button
-            id="{{ $collection[1]->group }}[]"
+            id="{{ $group }}[]"
             type="button"
-            wire:click="$set('refines', [])"
+            wire:click="$set('query', [])"
             class="hidden ml-2 lg:block text-base text-blue-500 font-bold"
         > Reset
         </button>
@@ -18,21 +16,21 @@
         @forelse ($collection as $item)
             <div
                 wire:key="{{ $item->id }}"
-                class="{{ $loop->iteration > 8 && !in_array($item->value, $refines) && $showMore == false ? ' hidden' : '' }} my-2 bg-light-primary dark:bg-dark-secondary dark:hover:text-dark-important dark:text-light-secondary rounded-lg">
+                class="{{ $loop->iteration > 8 && !$this->isChecked($item->value) && $showMore == false ? ' hidden' : '' }} my-2 bg-light-primary dark:bg-dark-secondary dark:hover:text-dark-important dark:text-light-secondary rounded-lg">
                 <label class="relative flex items-end p-2 capitalize">
                     <input
                         class="form-tick appearance-none h-6 w-6 mr-2 border border-gray-300 rounded-md checked:bg-light-important dark:bg-light-primary dark:checked:bg-dark-important dark:checked:border-transparent focus:outline-none"
                         type="checkbox"
                         name="{{ $item->group }}[]"
                         value="{{ $item->value }}"
-                        wire:model="refines"
-                        {{ in_array($item->value, $refines) ? 'checked' : '' }}
+                        wire:model="query"
+                        {{ $this->isChecked($item->value) ? 'checked' : '' }}
                     />
                     {{ $item->description }}
                 </label>
             </div>
             @if ($loop->iteration > 8 && $loop->last)
-                <div x-data="{ open: false }" class="px-2 py-2">
+                <div x-data="{ open: false }" class="flex px-2 py-2">
                     <button
                         name="expand-button"
                         type="button"

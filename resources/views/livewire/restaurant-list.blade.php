@@ -1,4 +1,5 @@
 <div class="bg-light-secondary dark:bg-dark-primary p-4">
+{{--    {{ dd($restaurants[0]->openinghours->where('dayOfWeek', today()->dayOfWeek)->first()) }}--}}
     <div class="container px-4 sm:px-8 mb-8 mx-auto">
         <div class="flex items-baseline mb-4">
             {{--TODO implement dynamic heading--}}
@@ -38,7 +39,7 @@
                                                     @endfor
                                                     <span class="ml-2 text-xs">({{ $restaurant->reviews_count }})</span>
                                                 </div>
-                                                <p class="text-sm font-bold capitalize">{{ $restaurant->categoryfilters->pluck('value')->implode(', ') }}</p>
+                                                <p class="text-sm font-bold capitalize">{{ $restaurant->categoryfilters->where('group', 'cuisines')->pluck('value')->implode(', ') }}</p>
                                             </div>
                                             <div class="w-full h-full sm:pl-2">
                                                 <div
@@ -58,7 +59,7 @@
                                                     </div>
                                                     <div>
                                                         <p>Opening hours:</p>
-                                                        {{--<p>{{ implode(' - ', $restaurant->details->opening_hours) }}</p>--}}
+                                                        <p>{{ $restaurant->openinghours->where('dayOfWeek', today()->dayOfWeek)->first()->dayOfWeekOpeningHours }}</p>
                                                     </div>
                                                 </div>
                                             </div>

@@ -21,7 +21,6 @@ class RestaurantList extends Component
         }
 
         $this->postcode = $postcode;
-
         $this->restaurants = $this->filterRestaurants();
     }
 

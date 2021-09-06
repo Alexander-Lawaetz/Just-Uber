@@ -1,4 +1,4 @@
 <div class="w-max">
-    @livewire('restaurant.cuisine-filter', ['collection' => $cuisines])
-    @livewire('restaurant.refine-filter', ['collection' => $refines])
+    @livewire('restaurant.sidebar-filter', ['collection' => $cuisinesCollection], key(1))
+    @livewire('restaurant.sidebar-filter', ['collection' => $refinesCollection], key(2))
 </div>
