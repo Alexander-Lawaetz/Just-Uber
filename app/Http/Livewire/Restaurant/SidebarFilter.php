@@ -22,8 +22,8 @@ class SidebarFilter extends Component
     }
 
     public function updatedQuery($value) {
-        $this->emitUp('updateFilters', $this->group, $this->query);
         $this->emit('filterUpdate', array_fill_keys([$this->group], array_values($this->query)));
+        $this->emitUp('updateFilters', $this->group, $this->query);
     }
 
     public function expand() {
