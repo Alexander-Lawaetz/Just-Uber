@@ -3,14 +3,15 @@
 namespace App\Http\Livewire\Restaurant;
 
 use App\Models\CategoryFilter;
+use Illuminate\Support\Collection;
 use Livewire\Component;
 
 class Sidebar extends Component
 {
-    public $cuisines;
-    public $cuisinesCollection;
-    public $refines;
-    public $refinesCollection;
+    public array $cuisines = [];
+    public Collection $cuisinesCollection;
+    public array $refines = [];
+    public Collection $refinesCollection;
 
     protected $queryString  = ['cuisines', 'refines'];
     protected $listeners    = ['updateFilters'];

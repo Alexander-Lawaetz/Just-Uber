@@ -3,19 +3,20 @@
 namespace App\Http\Livewire;
 
 use App\Models\Restaurant;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class RestaurantList extends Component
 {
-    public $restaurants = [];
-    public $postcode;
-    public $cuisines = [];
-    public $refines = [];
+    public Collection $restaurants;
+    public string $postcode;
+    public array $cuisines = [];
+    public array $refines = [];
 
     protected $listeners = ['filterUpdate'];
 
-    public function mount($postcode) {
+    public function mount(string $postcode) {
         foreach (request()->only(['cuisines', 'refines']) as $key => $value) {
             $this->$key = $value;
         }
@@ -24,14 +25,14 @@ class RestaurantList extends Component
         $this->restaurants = $this->filterRestaurants();
     }
 
-    public function filterUpdate($filters) {
+    public function filterUpdate(array $filters) : void{
         $key = array_keys($filters)[0];
         $this->$key = $filters[$key];
 
         $this->restaurants = $this->filterRestaurants();
     }
 
-    public function filterRestaurants() {
+    public function filterRestaurants() : Collection {
         $query = Restaurant::query();
 
         $query->when((!empty($this->cuisines) || !empty($this->refines)), function ($query) {

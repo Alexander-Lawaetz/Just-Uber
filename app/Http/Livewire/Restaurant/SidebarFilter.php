@@ -2,31 +2,32 @@
 
 namespace App\Http\Livewire\Restaurant;
 
+use Illuminate\Support\Collection;
 use Livewire\Component;
 
 class SidebarFilter extends Component
 {
-    public $query;
-    public $collection;
-    public $group;
-    public $showMore = false;
+    public array $query;
+    public Collection $collection;
+    public string $group;
+    public bool $showMore = false;
 
-    public function mount($collection) {
+    public function mount(Collection $collection, string $group){
         $this->collection = $collection;
-        $this->group = $this->collection[0]->group;
+        $this->group = $group;
         $this->query = $_GET[$this->group] ?? [];
     }
 
-    public function isChecked($value) : bool {
+    public function isChecked(string $value) : bool {
         return in_array($value, $this->query);
     }
 
-    public function updatedQuery($value) {
+    public function updatedQuery($value) : void {
         $this->emit('filterUpdate', array_fill_keys([$this->group], array_values($this->query)));
         $this->emitUp('updateFilters', $this->group, $this->query);
     }
 
-    public function expand() {
+    public function expand() : void {
         $this->showMore = !$this->showMore;
     }
 
