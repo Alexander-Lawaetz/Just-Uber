@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\CategoryFilterController;
 use App\Http\Controllers\RestaurantMenuController;
 use App\Http\Controllers\RestaurantQueryController;
 use Illuminate\Support\Facades\Cookie;
@@ -28,7 +27,5 @@ Route::get('/area/{postcode}', function ($postcode) {
 })->name('restaurants.filter');
 
 Route::get( '/restaurants-{identifier}', [RestaurantMenuController::class, '__invoke']);
-
-Route::get('/filters/categories', [CategoryFilterController::class, '__invoke']);
 
 Route::post('/area/search-query', [RestaurantQueryController::class, '__invoke'])->name('restaurants.query');

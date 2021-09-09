@@ -19,9 +19,9 @@
                 <div class="text-center">
                     <form action="{{ route('restaurants.query') }}" method="post" class="flex flex-row relative w-full lg:max-w-xl mx-auto border dark:border-dark-hover overflow-hidden rounded">
                         @csrf
-                        <label class="w-full min-h-full">
-                            <input id="zipSearch" class="w-full min-h-full px-4 pt-6 pb-2 text-bold dark:bg-dark-primary dark:text-dark-primary" onkeydown="return checkPhoneKey(event.key)" id="search-input" name="postcode" type="text" value="{{ $postcode  }}" autocomplete="false" pattern="\d{1,4}" maxlength="4" title="Four digit zip code" required>
-                            <span class="absolute top-1/4 left-0 ml-4 mt-1 transition-all duration-500 ease-in-out text-sm sm:text-base">Enter your postcode</span>
+                        <label class="w-full min-h-full relative">
+                            <input id="zipSearch" class="w-full min-h-full px-4 pt-6 pb-2 text-bold dark:bg-dark-primary dark:text-dark-primary" onkeydown="return checkPhoneKey(event.key)" id="search-input" name="postcode" tabindex="1" type="text" value="{{ $postcode  }}" autocomplete="false" pattern="\d{1,4}" maxlength="4" title="Four digit zip code" required>
+                            <span class="absolute transform translate-y-1/2 transition duration-500 ease-in-out left-0 ml-4 mt-1 text-sm sm:text-base">Enter your postcode</span>
                         </label>
                         <button class="bg-light-important dark:bg-dark-important hover:bg-light-hover dark:hover:bg-dark-hover text-light-secondary font-bold py-2 px-4 inline-flex items-center">
                             <x-icons.search-outline-svg class="sm:hidden w-6 h-6" />
@@ -29,7 +29,7 @@
                         </button>
                     </form>
                     @error('postcode')
-                    <span class="text-red-600 text-sm">{{ $message }}</span>
+                        <span class="text-red-600 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
@@ -83,7 +83,7 @@
 @push('styles')
     <style>
         input[type=text]:focus + span, input[type=text]:valid + span {
-            top: 0;
+            transform: translateY(-10%);
         }
     </style>
 @endpush
