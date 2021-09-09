@@ -1,5 +1,4 @@
 <div class="bg-light-secondary dark:bg-dark-primary p-4">
-{{--    {{ dd($restaurants[0]->openinghours->where('dayOfWeek', today()->dayOfWeek)->first()) }}--}}
     <div class="container px-4 sm:px-8 mb-8 mx-auto">
         <div class="flex items-baseline mb-4">
             {{--TODO implement dynamic heading--}}
@@ -19,7 +18,7 @@
                     <div class="flex-col divide-y divide-gray-600">
                         @forelse($this->restaurants as $key => $restaurant)
                             <div class="py-4">
-                                <a class="hover:bg-blue-400" href="/restaurants-{{ $restaurant->name }}">
+                                <a class="hover:bg-blue-400" href="/menu/{{ Str::of($restaurant->name)->trim()->slug('-') }}">
                                     <div class="flex flex-col sm:flex-row h-full w-full">
                                         <div class="relative h-32 sm:w-52 sm:mr-12 mb-6 sm:mb-0">
                                             <div class="h-full w-full bg-cover bg-no-repeat bg-center"
@@ -44,18 +43,26 @@
                                             <div class="w-full h-full sm:pl-2">
                                                 <div
                                                     class="flex flex-col justify-between h-32 text-left my-auto text-sm">
-                                                    <div class="flex items-center mt-6">
-                                                        {{--@if(empty($restaurant->details->take_away))
-                                                            <x-icons.just-eat.self-pickup-svg class="h-6 w-6"></x-icons.just-eat.self-pickup-svg>
-                                                            <p class="ml-2">Only self pickup</p>
+                                                    <div class="flex space-x-4 mt-6">
+                                                        @if(empty($restaurant->offer_delivery))
+                                                            <div class="flex items-end  text-light-important dark:text-dark-important">
+                                                                <x-icons.just-eat.delivery-fee-svg class="fill-current h-6 w-6"></x-icons.just-eat.delivery-fee-svg>
+                                                                <p class="ml-2">Only self pickup</p>
+                                                            </div>
                                                         @else
-                                                            <x-icons.just-eat.money-svg class="h-6 w-6"></x-icons.just-eat.money-svg>
-                                                             TODO shorten this statement
-                                                            <p class="ml-2">
-                                                                Delivery {{ !empty($restaurant->details->take_away->deliver_fee) ? $restaurant->details->take_away->deliver_fee . ' ' . $restaurant->details->take_away->currency_sign . '.' : 'FREE' }}
-                                                                - {{ !empty($restaurant->details->take_away->min_order) ? 'Min. order ' . $restaurant->details->take_away->min_order . ' ' . $restaurant->details->take_away->currency_sign : 'No min. order' }}
-                                                            </p>
-                                                        @endif--}}
+                                                            @if(!empty($restaurant->delivery_fee))
+                                                                <div class="flex items-end">
+                                                                    <x-icons.just-eat.delivery-fee-svg class="fill-current h-6 w-6"></x-icons.just-eat.delivery-fee-svg>
+                                                                    <p class="ml-2">{{ $restaurant->delivery_fee }}</p>
+                                                                </div>
+                                                            @endif
+                                                            @if(!empty($restaurant->minimum_fee))
+                                                                <div class="flex items-end">
+                                                                    <x-icons.just-eat.minimum-fee-svg class="fill-current h-6 w-6"></x-icons.just-eat.minimum-fee-svg>
+                                                                    <p class="ml-2">{{ 'Min. ' . $restaurant->minimum_fee }}</p>
+                                                                </div>
+                                                            @endif
+                                                        @endif
                                                     </div>
                                                     <div>
                                                         <p>Opening hours:</p>

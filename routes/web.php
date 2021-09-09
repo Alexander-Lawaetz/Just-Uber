@@ -26,6 +26,6 @@ Route::get('/area/{postcode}', function ($postcode) {
     return view('restaurant-index', ['postcode' => $postcode]);
 })->name('restaurants.filter');
 
-Route::get( '/restaurants-{identifier}', [RestaurantMenuController::class, '__invoke']);
+Route::get( '/menu/{slug}', [RestaurantMenuController::class, '__invoke']);
 
 Route::post('/area/search-query', [RestaurantQueryController::class, '__invoke'])->name('restaurants.query');
